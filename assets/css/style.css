@@ -1,0 +1,104 @@
+
+
+/* Asterisk wild card selector to override default styles added by the browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General */
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* header */
+
+#title {
+    background-color: #49c593;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+#title a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    padding-top: 10px;
+    
+}
+
+
+#title h1 {
+    font-size: 1.5rem;
+}
+
+
+/* Introduction */
+#main-section {
+    display: flex;
+    /* position: relative; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 20px;
+    flex: 1;
+}
+
+#hero-image-outer {
+    background: url('../images/knowledge_hero_image.avif')  no-repeat center center/cover;
+    width: 300px;
+    height: 150px;
+    /* position: absolute; */
+    margin-top: 20px;
+}
+
+#intro {
+    margin-top: 20px;
+    width: 600px;
+    height: 150px;
+}
+
+#intro p { 
+    margin-top: 20px;
+    font-size: small;
+}
+
+
+#intro h2 {
+    font-size: 1.2rem;
+}
+
+#spacing {
+    width: 100vw;
+    height: 250px;
+}
+
+
+/* footer */
+
+footer {
+    width: 100vw;
+    background-color: #49c593;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer li {
+    display: inline;
+    list-style-type: none;
+    margin-top: 20px;
+    padding: 20px;
+    justify-content: center;
+} 
+
+footer ul {
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 20px;
+} 
