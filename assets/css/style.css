@@ -31,6 +31,10 @@ body{
     
 }
 
+#title a:hover {
+    text-decoration: underline;
+}
+
 
 #title h1 {
     font-size: 1.5rem;
@@ -46,6 +50,7 @@ body{
     justify-content: space-between;
     column-gap: 20px;
     flex: 1;
+    position: relative;
 }
 
 #hero-image-outer {
@@ -58,8 +63,7 @@ body{
 
 #intro {
     margin-top: 20px;
-    width: 600px;
-    height: 150px;
+    flex-basis: 45% ;
 }
 
 #intro p { 
@@ -72,15 +76,32 @@ body{
     font-size: 1.2rem;
 }
 
+#start-game {
+    position: absolute;
+    right: 250px;
+    bottom: 200px;
+    padding: 10px;
+    background-color: #49c593;
+    border-radius: 10px;
+
+      }
+
+#start-game:hover {
+    cursor: pointer;
+}
+
+
 #spacing {
     width: 100vw;
     height: 250px;
+    
 }
 
 
 /* footer */
 
 footer {
+    margin-top: auto;
     width: 100vw;
     background-color: #49c593;
     margin-top: auto;
