@@ -1,3 +1,6 @@
+/* Importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lumanosimo&family=MedievalSharp&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
 
 
 /* Asterisk wild card selector to override default styles added by the browser */
@@ -14,11 +17,20 @@ body{
     flex-direction: column;
 }
 
+h1,h2 {
+    font-family: 'MedievalSharp', sans-serif;
+}
+
+p, input {
+    font-family:  'Lumanosimo', sans-serif;
+}
+
 /* header */
 
 #title {
     background-color:#ba3838;
     padding: 10px;
+    box-shadow: 3px 2px 2px #3a3a3a;
 }
 
 #title a {
@@ -61,7 +73,7 @@ body{
 #hero-image-outer {
     background: url('../images/knowledge_hero_image.avif')  no-repeat center center/cover;
     width: 80vw;
-    height: 200px;
+    height: 50vh;
     /* position: absolute; */
     margin: 20px;
     padding: 20px;
@@ -78,6 +90,8 @@ body{
 #intro p { 
     margin-top: 20px;
     font-size: small;
+    padding: 20px;
+    text-align: justify;
 }
 
 
@@ -141,3 +155,4 @@ footer p {
 .fa-brands {
     color: white;
 }
+
