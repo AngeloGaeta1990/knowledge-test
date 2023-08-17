@@ -132,6 +132,13 @@ p, input {
     padding: 5px;
 }
 
+#counters {
+    align-self: self-end;
+    font-size: smaller;
+}
+
+
+
 #answers {
     display: flex;
     flex-direction: column;
