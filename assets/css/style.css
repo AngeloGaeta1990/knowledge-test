@@ -45,18 +45,24 @@ body{
 #main-section {
     display: flex;
     /* position: relative; */
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     column-gap: 20px;
     flex: 1;
-    position: relative;
+    align-items: center;
+
 }
+
+#intro-header {
+    margin-top: 10px;
+}
+
 
 #hero-image-outer {
     background: url('../images/knowledge_hero_image.avif')  no-repeat center center/cover;
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
     /* position: absolute; */
     margin-top: 20px;
     margin-left: 10px;
@@ -65,6 +71,9 @@ body{
 #intro {
     margin-top: 20px;
     flex-basis: 45% ;
+    width: 80vw;
+    padding: 10px;
+
 }
 
 #intro p { 
@@ -78,9 +87,7 @@ body{
 }
 
 #start-game {
-    position: absolute;
-    right: 250px;
-    bottom: 200px;
+    margin-top: 50px;
     padding: 10px;
     background-color: #49c593;
     border-radius: 10px;
@@ -94,7 +101,7 @@ body{
 
 #spacing {
     width: 100vw;
-    height: 250px;
+    height: 100px;
     
 }
 
