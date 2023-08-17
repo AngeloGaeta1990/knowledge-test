@@ -51,6 +51,7 @@ body{
     column-gap: 20px;
     flex: 1;
     align-items: center;
+    background: url('../images/page-background.jpg') no-repeat center center/cover;
 
 }
 
@@ -87,10 +88,11 @@ body{
 }
 
 #start-game {
-    margin-top: 50px;
+    margin: 50;
     padding: 10px;
     background-color: #49c593;
     border-radius: 10px;
+    
 
       }
 
@@ -99,11 +101,11 @@ body{
 }
 
 
-#spacing {
+/* #spacing {
     width: 100vw;
     height: 100px;
     
-}
+} */
 
 
 /* footer */
