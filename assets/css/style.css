@@ -107,20 +107,31 @@ footer {
     background-color: #49c593;
     margin-top: auto;
     display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: wrap;
     justify-content: space-evenly;
 }
 
 footer li {
     display: inline;
     list-style-type: none;
-    margin-top: 20px;
-    padding: 20px;
-    justify-content: center;
+    padding: 5px 20px;
 } 
 
 footer ul {
-    justify-content: center;
-    align-items: center;
     list-style: none;
     padding: 20px;
-} 
+    flex-basis: 100%;
+    display: flex; /* Add display flex */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */ 
+}
+
+footer p {
+    font-size: small;
+}
+
+.fa-brands {
+    color: black;
+}
