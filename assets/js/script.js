@@ -37,15 +37,17 @@ let questions = [
 ];
 
 
-// list of answered questions
-let questionAsked = [];
-
 // total number of questions
 const totalQuestions = 30
 
 
 //Generates fisrt question
-generateFirstQuestion()
+generateFirstQuestion() 
+//adds and update the timer
+startTimer()
+updateTimer()
+
+
 
 document.addEventListener("DOMContentLoaded",function() {
 
@@ -100,3 +102,39 @@ function generateFirstQuestion() {
     document.getElementById('answer4').textContent = question["answer4"];
     }
     
+
+
+//Timer functions
+
+/*
+* Starts the timer
+*/
+function startTimer() {
+    startTime = Date.now();
+    updateTimer();
+    timerInterval = setInterval(updateTimer, 1000); // Update every second
+  }
+  
+
+/*
+* updates the timer evaluating the difference between current time and start time
+* it also formats the timer in MM:SS 
+*/
+function updateTimer() {
+    let currentTime = Date.now();
+    let elapsedTime = currentTime - startTime;
+    
+    let minutes = Math.floor(elapsedTime / 60000);
+    let seconds = Math.floor((elapsedTime % 60000) / 1000);
+    
+    let formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    
+    document.getElementById('timer').textContent = formattedTime;
+  }
+
+/*
+* Ends the timer
+*/  
+  function stopTimer() {
+    clearInterval(timerInterval);
+  }
