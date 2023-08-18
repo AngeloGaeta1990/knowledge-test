@@ -55,7 +55,17 @@ const totalQuestions = 30
 function selectRandomQuestion() {
     let currentQuestionIndex = Math.floor(Math.random() * questions.length);
     currentQuestion = questions[currentQuestionIndex];
+    return currentQuestion
 }
 
+/*
+* Deletes the selected questions from the the list of question
+*/
+function deleteQuestion(currentQuestion) {
+    let currentQuestionIndex = questions.indexOf(currentQuestion);
+    // checks if the element is in the array
+    if (currentQuestionIndex !== -1) {
+        questions.splice(currentQuestionIndex,1);
+    }
+}
 
-selectRandomQuestion()
