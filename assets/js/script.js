@@ -2,7 +2,7 @@
 // List of questions objects to show in the quiz
 let questions = [
     {
-       id: 1, 
+       id: 1 , 
        category: "history",
        question: 'Who pronounced the famous quotation "Alea jacta est"?',
        answer1: "Julius Caesar",
@@ -12,7 +12,7 @@ let questions = [
        correctAnswer: "Julius Caesar",
     },
     {
-        id:2,
+        id:2 ,
         category: "entertainment",
         question: "Who won game of the year in 2022?",
         answer1: "Sekiro",
@@ -20,6 +20,18 @@ let questions = [
         answer3: "Elden ring",
         answer4: "It takes two",
         correctAnswer: "Elden ring",
+
+    },
+
+    {
+        id: 3 ,
+        category: "geography" ,
+        question: "Which of the following is the capital of Norway?",
+        answer1: "Rome",
+        answer2: "Oslo",
+        answer3: "Prague",
+        answer4: "Nairobi",
+        correctAnswer: "Oslo",
 
     }
 ];
@@ -34,9 +46,10 @@ const totalQuestions = 30
 
 
 
-
-// document.addEventListener("DOMContentLoaded",function() {
-//     let buttons = document.getElementsByTagName('button');
+document.addEventListener("DOMContentLoaded",function() {
+    let buttons = document.getElementsByTagName('button');
+    console.log(buttons)
+})
     
 //     for (let button of buttons) {
 //         button.addEventListener('click', function() { 
