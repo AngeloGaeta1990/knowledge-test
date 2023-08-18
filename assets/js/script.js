@@ -44,11 +44,15 @@ let questionAsked = [];
 const totalQuestions = 30
 
 
-
+//Generates fisrt question
+generateFirstQuestion()
 
 document.addEventListener("DOMContentLoaded",function() {
+
+
     let buttons = document.getElementsByTagName('button');
-    console.log(buttons)
+    
+
 })
     
 //     for (let button of buttons) {
@@ -82,3 +86,17 @@ function deleteQuestion(currentQuestion) {
     }
 }
 
+/*
+*Generates the first question
+*/
+
+function generateFirstQuestion() {
+    let question = selectRandomQuestion();
+    document.getElementById('category').textContent = question["category"];
+    document.getElementById('question').textContent = question["question"];
+    document.getElementById('answer1').textContent = question["answer1"];
+    document.getElementById('answer2').textContent = question["answer2"];
+    document.getElementById('answer3').textContent = question["answer3"];
+    document.getElementById('answer4').textContent = question["answer4"];
+    }
+    
