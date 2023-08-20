@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded",function() {
         startTime = logTime()
         startTimer()
         updateTimer()
+        exitGameButton()
         document.getElementById("next").addEventListener("click", function() {
             //stops the timer
             stopTimer();
@@ -107,7 +108,10 @@ document.addEventListener("DOMContentLoaded",function() {
             updateTimer()
             if (questionCounter === questions.length){
                 console.log("gameOver")
-            } 
+            }
+        
+            
+            
 
 
 
@@ -212,3 +216,16 @@ function updateTimer() {
   }
 
 
+/*
+*Adds exit event function
+*/
+function exitGameButton() {
+    document.getElementById("exit").addEventListener("click", function() {
+        let confirmExit = confirm("Are you sure you want to leave the game?");
+        if (confirmExit) {
+            alert("Thank you for playing!")
+            let homepageLink = document.getElementById("exit-link")
+                homepageLink.href= "index.html"
+        }
+    })
+}
