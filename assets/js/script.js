@@ -228,7 +228,8 @@ function exitGameButton() {
 function gameOver () {
     if (questionCounter === totalQuestions){
         document.getElementById("next").addEventListener("click", function() {
-        document.getElementById('question').textContent = "Thank you for completing  the game!"
+            let resultLink = document.getElementById("result-link")
+            resultLink.href= "results.html"
         console.log('gameover')
         })
     }
