@@ -62,48 +62,60 @@ let categories = [
 ]
 
 let questionCounter = 1
+let repeats = 0
 
 // total number of questions
 const totalQuestions = 30
 
 document.addEventListener("DOMContentLoaded",function() {
-
-    //Generates fisrt question
-    question = generateQuestion()
-    // Displays question counter
-    document.getElementById("question-counter").textContent = questionCounter
-
-    //adds and update the timer
-    startTime = logTime()
-    startTimer()
-    updateTimer()
-    document.getElementById("next").addEventListener("click", function() {
-        // Logs time after answer has been selected
-        endTime = logTime()
-        // Get the radiobutton id of selected anwer
-        let selectedAnswer = document.querySelector('input[name="answer"]:checked');
-        // checks if id of selected radiobutton matches with the correctAnswerId attribute of question object
-        if (selectedAnswer.value === question.correctAnswerId) {
-            // find thwe category object which name matches question catergoty attribute
+        //Generates first question
+        let question = generateQuestion()
+        // Displays question counter
+        document.getElementById("question-counter").textContent = questionCounter
+        //adds and update the timer
+        startTime = logTime()
+        startTimer()
+        updateTimer()
+        document.getElementById("next").addEventListener("click", function() {
+            //stops the timer
+            stopTimer();
+            // Logs time after answer has been selected
+            endTime = logTime()
+            // Get the radiobutton id of selected anwer
+            let selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            // checks if id of selected radiobutton matches with the correctAnswerId attribute of question object
             for (category of categories) {
+            // Finds the category object which name matches question catergoty attribute
                 if (category.name === question.category){
-                // if answer is correct increase category score and incerease category time
-                category.score++
-                category.time =+ Math.floor(((endTime - startTime)% 60000)/1000)
+                    // incerease category time
+                    category.time += Math.floor(((endTime - startTime)% 60000)/1000)
+                    // if answer is correct increase category score 
+                    if (selectedAnswer.value === question.correctAnswerId){
+                        category.score++
+                    }
                 }
             }
-        }
-        stopTimer()
-        deleteQuestion(question)
-        // Updates and displays question counter
-        questionCounter++
-        document.getElementById("question-counter").textContent = questionCounter
-        let newQuestion = generateQuestion()
+            questionCounter++;
+            deleteQuestion(question);
+            //Generates first question
+            question = generateQuestion()
+            // Displays question counter
+             document.getElementById("question-counter").textContent = questionCounter
+             //adds and update the timer
+            startTime = logTime()
+            startTimer()
+            updateTimer()
+            if (questionCounter === questions.length){
+                console.log("gameOver")
+            } 
 
-        }
-        )
 
+
+        })
+        
     })
+       
+
 
 
 
@@ -155,12 +167,6 @@ function generateQuestion() {
     document.getElementById('answer4').textContent = question["answer4"];
     return question
     }
-    
-
-
-   /*
-*Generates the a new que question
-*/ 
 
 
 //Timer functions
@@ -204,3 +210,5 @@ function updateTimer() {
   function logTime () {
     return Date.now()
   }
+
+
