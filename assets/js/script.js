@@ -62,10 +62,9 @@ let categories = [
 ]
 
 let questionCounter = 1
-let repeats = 0
 
 // total number of questions
-const totalQuestions = 30
+const totalQuestions = 3
 
 document.addEventListener("DOMContentLoaded",function() {
         //Generates first question
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded",function() {
         // Displays question counter
         document.getElementById("question-counter").textContent = questionCounter
         //adds and update the timer
-        startTime = logTime()
+        let startTime = logTime()
         startTimer()
         updateTimer()
         exitGameButton()
@@ -106,14 +105,7 @@ document.addEventListener("DOMContentLoaded",function() {
             startTime = logTime()
             startTimer()
             updateTimer()
-            if (questionCounter === questions.length){
-                console.log("gameOver")
-            }
-        
-            
-            
-
-
+            gameOver()
 
         })
         
@@ -228,4 +220,18 @@ function exitGameButton() {
                 homepageLink.href= "index.html"
         }
     })
+}
+
+/*
+*Ends the game
+*/
+function gameOver () {
+    if (questionCounter === totalQuestions){
+        document.getElementById("next").addEventListener("click", function() {
+        document.getElementById('question').textContent = "Thank you for completing  the game!"
+        console.log('gameover')
+        })
+    }
+
+
 }
