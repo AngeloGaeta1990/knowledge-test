@@ -66,7 +66,9 @@ let questionCounter = 1
 // total number of questions
 const totalQuestions = 3
 
+
 document.addEventListener("DOMContentLoaded",function() {
+        if (window.location.href.endsWith("questions.html")) {
         //Generates first question
         let question = generateQuestion()
         // Displays question counter
@@ -98,18 +100,39 @@ document.addEventListener("DOMContentLoaded",function() {
             questionCounter++;
             deleteQuestion(question);
             //Generates first question
-            question = generateQuestion()
-            // Displays question counter
-             document.getElementById("question-counter").textContent = questionCounter
-             //adds and update the timer
-            startTime = logTime()
-            startTimer()
-            updateTimer()
-            gameOver()
+            if (questionCounter <= totalQuestions) {
+                question = generateQuestion()
+                // Displays question counter
+                document.getElementById("question-counter").textContent = questionCounter
+                //adds and update the timer
+                startTime = logTime()
+                startTimer()
+                updateTimer()
+            }else {
+                gameOver()
 
-        })
+            
+            }
+                    }
+)}});
+            
+document.addEventListener("DOMContentLoaded",function() {
+    if (window.location.href.endsWith("results.html")){
+        let storedCategories = JSON.parse(localStorage.getItem('categories'))
+        console.log(storedCategories)
+        document.getElementById('history').textContent = storedCategories[0].score;
+        document.getElementById('geography').textContent = storedCategories[1].score;
+        document.getElementById('entertainment').textContent = storedCategories[2].score;
+        document.getElementById('total-score').textContent = storedCategories[0].score + storedCategories[1].score+ storedCategories[2].score;
+    }});
         
-    })
+
+                
+                
+                
+    
+
+
        
 
 
@@ -161,8 +184,8 @@ function generateQuestion() {
     document.getElementById('answer2').textContent = question["answer2"];
     document.getElementById('answer3').textContent = question["answer3"];
     document.getElementById('answer4').textContent = question["answer4"];
-    return question
-    }
+    return question}
+    
 
 
 //Timer functions
@@ -226,13 +249,10 @@ function exitGameButton() {
 *Ends the game
 */
 function gameOver () {
-    if (questionCounter === totalQuestions){
-        document.getElementById("next").addEventListener("click", function() {
-            let resultLink = document.getElementById("result-link")
-            resultLink.href= "results.html"
-        console.log('gameover')
-        })
+    // Store categories' scores in local storage
+    localStorage.setItem('categories', JSON.stringify(categories));
+    // Redirect to results.html
+    window.location.href = "results.html";
+    let resultLink = document.getElementById("result-link");
+    resultLink.href= "results.html";
     }
-
-
-}
