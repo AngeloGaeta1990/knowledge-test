@@ -24,14 +24,21 @@
     </header>
     
     <main id="results-main">
+    <div id="text-resuls">
         <h2>Thank you for playing the Wisdom trial game</h2>
         <p>Your score in  History is <span id="history"></span></p>
         <p>Your score in  Geography is <span id="geography"></span></p>
         <p>Your score in Entertainment is <span id="entertainment"></span></p>
         <p>Your total score is <span id="total-score"></span></p>
+    </div>
+    <div id="radar-plot-outer">
+        <canvas id="radar-plot"></canvas>
+    </div>
+        <div class="spacing"></div>
+     
     </main>
 
-
+   
     <footer>
         <ul id="social-networks">
             <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-square-facebook"></i></a></li>
@@ -48,6 +55,7 @@
 
     <!-- JavaScript  -->
     <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     
 </body>

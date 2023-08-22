@@ -119,11 +119,13 @@ document.addEventListener("DOMContentLoaded",function() {
 document.addEventListener("DOMContentLoaded",function() {
     if (window.location.href.endsWith("results.html")){
         let storedCategories = JSON.parse(localStorage.getItem('categories'))
-        console.log(storedCategories)
-        document.getElementById('history').textContent = storedCategories[0].score;
-        document.getElementById('geography').textContent = storedCategories[1].score;
-        document.getElementById('entertainment').textContent = storedCategories[2].score;
-        document.getElementById('total-score').textContent = storedCategories[0].score + storedCategories[1].score+ storedCategories[2].score;
+        let totalScore = 0
+        for (let category of storedCategories) { 
+            document.getElementById(category.name.toLowerCase()).textContent = category.score;
+            totalScore += category.score
+        }
+        document.getElementById('total-score').textContent = totalScore
+        radarPlot(categories)
     }});
         
 
@@ -256,3 +258,45 @@ function gameOver () {
     let resultLink = document.getElementById("result-link");
     resultLink.href= "results.html";
     }
+
+
+/*
+* Draws a star plot of the scores
+*/
+function radarPlot (categories) {
+    console.log(categories)
+    // Extract data
+    let subjectNames = categories.map(category => category.name);
+    let scores = categories.map(category => category.score);
+    // Get the canvas element
+    let canvas = document.getElementById('radar-plot');
+    let ctx = canvas.getContext('2d');
+    let chart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: subjectNames,
+        datasets: [{
+        label: 'Scores',
+        data: scores,
+        borderColor: '#ba3838',
+        backgroundColor: 'rgba(186, 56, 56, 0.25)',
+        pointBackgroundColor: 'rgba(186, 56, 56, 0.85)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
+        }],
+    },
+    options: {
+        scale: {
+        ticks: {
+            beginAtZero: true,
+            max: 10, // Adjust the maximum value as needed
+            fontSize: 1, // Adjust the font size as needed
+        },
+        },
+    },
+ 
+    
+    }
+    )};
+     

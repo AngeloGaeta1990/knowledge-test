@@ -108,7 +108,7 @@ body{
 }
 
 
-#spacing {
+.spacing {
     width: 100vw;
     height: 5vh;
 }
@@ -167,15 +167,27 @@ body{
     display: flex;
     flex-direction: column;
     background: url('../images/page-background.jpg') no-repeat center center/cover;
-    height: 80vh;
+    flex: 1 0 auto;
+    justify-content: center; /* Center items vertically */
 }
 
 #results-main h2 {
-    padding: 20px;
-    margin: 10px;
+    font-size: medium;
+    padding: 5px;
+    margin: 15px;
+    margin-left: 10px;
 }
 
 #results-main p {
+    font-size: medium;
+    padding: 5px;
+    margin: 10px;
+}
+
+#radar-plot {
+    width: 80vw;
+    height: 20vh ;
+    align-self: flex-end;
     padding: 5px;
     margin: 5px;
 }
