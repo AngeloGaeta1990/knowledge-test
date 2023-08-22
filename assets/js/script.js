@@ -120,11 +120,15 @@ document.addEventListener("DOMContentLoaded",function() {
     if (window.location.href.endsWith("results.html")){
         let storedCategories = JSON.parse(localStorage.getItem('categories'))
         let totalScore = 0
+        let totalTime = 0
         for (let category of storedCategories) { 
             document.getElementById(category.name.toLowerCase()).textContent = category.score;
+            document.getElementById(category.name.toLowerCase() + "-time").textContent = category.time;
             totalScore += category.score
+            totalTime  += category.time
         }
         document.getElementById('total-score').textContent = totalScore
+        document.getElementById('total-time').textContent = totalTime
         radarPlot(categories)
     }});
         
@@ -291,7 +295,7 @@ function radarPlot (categories) {
         ticks: {
             beginAtZero: true,
             max: 10, // Adjust the maximum value as needed
-            fontSize: 1, // Adjust the font size as needed
+            fontSize: 5, // Adjust the font size as needed
         },
         },
     },
