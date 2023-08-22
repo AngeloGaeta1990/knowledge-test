@@ -36,7 +36,150 @@ let questions = [
         correctAnswer: "Oslo",
         correctAnswerId: "option2",
 
-    }
+    },
+
+    {
+        id: 4 ,
+        category: "Science" ,
+        question: "Which of the following nucleotides is in DNA but not in RNA",
+        answer1: "Thymine T",
+        answer2: "Adenine A",
+        answer3: "Uracil U",
+        answer4: "Cytosine C",
+        correctAnswer: "Thymine T",
+        correctAnswerId: "option1",
+    },
+    {
+        id: 5 ,
+        category: "Sport" ,
+        question: "Which football team won the World Global Cup in 2006",
+        answer1: "Germany",
+        answer2: "France",
+        answer3: "Italy",
+        answer4: "United Kingdom",
+        correctAnswer: "Italy",
+        correctAnswerId: "option3",
+    },
+
+    {
+        id: 6 ,
+        category: "Literature" ,
+        question: "Who wrote the fable 'Pinocchio'?",
+        answer1: "Italo Svevo",
+        answer2: "Italo Calvino",
+        answer3: "Giacomo Leopardi",
+        answer4: "Carlo Collodi",
+        correctAnswer: "Carlo collodi",
+        correctAnswerId: "option4",
+    },
+
+    {
+        id: 7 ,
+        category: "History" ,
+        question: " Who was the philosopher known for the sentence 'I know that I am intelligent, because I know that I know nothing?'",
+        answer1: "Socrates",
+        answer2: "Plato",
+        answer3: "Aristotle",
+        answer4: "Herodotus",
+        correctAnswer: "Socrates",
+        correctAnswerId: "option1",
+    },
+
+    {
+       id: 8,
+       category: "Entertainment",
+       question: "In which of the following bands the singer commited suicide?",
+       answer1: "30 seconds to Mars",
+       answer2: "Of Monsters and Man",
+       answer3: "Imagine Dragons",
+       answer4: "Nirvana",
+       correctAnswer: "Nirvana",
+       correctAnswerId: "option4",
+    },
+
+    {
+        id: 9,
+        category: "Geography",
+        question: "Which one is longest river in the world?",
+        answer1: "Rio",
+        answer2: "Nile",
+        answer3: "Ganges",
+        answer4: "Mississipi",
+        correctAnswer: "Nile",
+        correctAnswerId: "option2",
+     },
+
+     {
+        id: 10,
+        category: "Science",
+        question: "What is the hardest natural substance on Earth?",
+        answer1: "Titanium",
+        answer2: "Tungsten",
+        answer3: "Steel",
+        answer4: "Diamond",
+        correctAnswer: "Diamond",
+        correctAnswerId: "option4",
+     },
+
+     {
+        id: 11,
+        category: "Sport",
+        question: "What is the meaning of the world Aikido",
+        answer1: "The way of harmony with the universe",
+        answer2: "Happiness in the peace of mind",
+        answer3: "Use enemy strength against him",
+        answer4: "Balance and Armony",
+        correctAnswer: "The way of harmony with the universe",
+        correctAnswerId: "option1",
+     },
+
+     {
+        id: 12,
+        category: "Literature",
+        question: "Which poem start with the following sentence 'This solitary hill has always been dear to me And this hedge, which prevents me from seeing most ofThe endless horizon.' ",
+        answer1: "Divine Comedy (Dante Alighieri)",
+        answer2: "Macbeth (Wiliam Shakespeare)",
+        answer3: "The Infinite (Giacomo Leopardi)",
+        answer4: "The Art of War (Sun Tzu)",
+        correctAnswer: "The Infinite (Giacomo Leopardi)",
+        correctAnswerId: "option3",
+     },
+
+     {
+        id: 13,
+        category: "History",
+        question: "when did the First World War start?",
+        answer1: "1920",
+        answer2: "1940",
+        answer3: "1942",
+        answer4: "1914",
+        correctAnswer: "1914",
+        correctAnswerId: "option4",
+     },
+
+     {
+        id: 14,
+        category: "Entertainment",
+        question: "In Which of the following movies Quentin Tarantino was not the director",
+        answer1: "The Hateful Eight",
+        answer2: "Pulp fiction",
+        answer3: "Eyes Wide Shut",
+        answer4: "Django Unchained",
+        correctAnswer: "Eyes Wide Shut",
+        correctAnswerId: "option3",
+     },
+
+     {
+        id: 15,
+        category: "Geography",
+        question: "What is the geographical location of the Earth's lowest point?",
+        answer1: "Mariana Trench",
+        answer2: "Mount Everest",
+        answer3: "Great Barrier Reef",
+        answer4: "Amazon Rainforest",
+        correctAnswer: "Mariana Trench",
+        correctAnswerId: "option1",
+     },
 ];
 
 //List of categories with scores and times
@@ -57,14 +200,32 @@ let categories = [
         name: "Entertainment",
         time: 0,
         score: 0,
-    }
+    },
+
+    {
+        name: "Science",
+        time: 0,
+        score: 0,
+    },
+
+    {
+        name: "Sport",
+        time: 0,
+        score: 0,
+    },
+
+    {
+        name: "Literature",
+        time: 0,
+        score: 0,
+    },
 
 ]
 
 let questionCounter = 1
 
 // total number of questions
-const totalQuestions = 3
+const totalQuestions = questions.length
 
 
 document.addEventListener("DOMContentLoaded",function() {
@@ -73,6 +234,7 @@ document.addEventListener("DOMContentLoaded",function() {
         let question = generateQuestion()
         // Displays question counter
         document.getElementById("question-counter").textContent = questionCounter
+        document.getElementById("total-questions").textContent = totalQuestions
         //adds and update the timer
         let startTime = logTime()
         startTimer()
@@ -294,7 +456,7 @@ function radarPlot (categories) {
         scale: {
         ticks: {
             beginAtZero: true,
-            max: 10, // Adjust the maximum value as needed
+            max: 5, // Adjust the maximum value as needed
             fontSize: 5, // Adjust the font size as needed
         },
         },
