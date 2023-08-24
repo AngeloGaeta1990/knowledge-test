@@ -141,12 +141,12 @@ let questions = [
      {
         id: 12,
         category: "Literature",
-        question: "Which poem start with the following sentence 'This solitary hill has always been dear to me And this hedge, which prevents me from seeing most ofThe endless horizon.' ",
-        answer1: "Divine Comedy (Dante Alighieri)",
-        answer2: "Macbeth (Wiliam Shakespeare)",
-        answer3: "The Infinite (Giacomo Leopardi)",
-        answer4: "The Art of War (Sun Tzu)",
-        correctAnswer: "The Infinite (Giacomo Leopardi)",
+        question: "Which poem start with the following sentence 'This solitary hill has always been dear to me And this hedge...,'? ",
+        answer1: "Divine Comedy",
+        answer2: "Macbeth ",
+        answer3: "The Infinite",
+        answer4: "The Art of War",
+        correctAnswer: "The Infinite",
         correctAnswerId: "option3",
      },
 
@@ -440,44 +440,21 @@ document.addEventListener("DOMContentLoaded",function() {
         let startTime = logTime()
         startTimer()
         updateTimer()
+        // Checks if exit button was pressed
         exitGameButton()
+        // Generate next question for click event
         document.getElementById("next").addEventListener("click", function() {
-            //stops the timer
-            stopTimer();
-            // Logs time after answer has been selected
-            endTime = logTime()
-            // Get the radiobutton id of selected anwer
-            let selectedAnswer = document.querySelector('input[name="answer"]:checked');
-            // checks if id of selected radiobutton matches with the correctAnswerId attribute of question object
-            for (category of categories) {
-            // Finds the category object which name matches question catergoty attribute
-                if (category.name === question.category){
-                    // incerease category time
-                    category.time += Math.floor(((endTime - startTime)% 60000)/1000)
-                    // if answer is correct increase category score 
-                    if (selectedAnswer.value === question.correctAnswerId){
-                        category.score++
-                    }
-                }
+            nextQuestion()
+        })
+        // And for Enter keyboard event
+        document.getElementById("answers").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+            nextQuestion()
             }
-            questionCounter++;
-            deleteQuestion(question);
-            //Generates first question
-            if (questionCounter <= totalQuestions) {
-                question = generateQuestion()
-                // Displays question counter
-                document.getElementById("question-counter").textContent = questionCounter
-                //adds and update the timer
-                startTime = logTime()
-                startTimer()
-                updateTimer()
-            }else {
-                gameOver()
+        })
 
-            
-            }
-                    }
-)}});
+        
+    }});
             
 document.addEventListener("DOMContentLoaded",function() {
     if (window.location.href.endsWith("results.html")){
@@ -615,9 +592,111 @@ function exitGameButton() {
 }
 
 /*
+*Manages all the events happening after click event on next button:
+* Stops the timer
+* Logs time 
+* Get the radiobutton id of selected anwer
+* Checks if id of selected radiobutton matches with the correctAnswerId attribute of question object
+* Finds the category object which name matches question catergoty attribute
+* Incerease time score in catagory object (results)
+* If answer is correct increase score in category object (results)
+* Increase the question counter by 1
+* Delete question object from array of questions
+* Picks new question from the array 
+* if the question counter is > total questions then it loads results page
+*/
+function nextQuestion () {
+        //stops the timer
+        stopTimer();
+        // Logs time 
+        endTime = logTime()
+        // Get the radiobutton id of selected anwer
+        let selectedAnswer = document.querySelector('input[name="answer"]:checked');
+        // checks if id of selected radiobutton matches with the correctAnswerId attribute of question object
+        for (category of categories) {
+        // Finds the category object which name matches question catergoty attribute
+            if (category.name === question.category){
+                // incerease time score in catagory object (results)
+                category.time += Math.floor(((endTime - startTime)% 60000)/1000)
+                // if answer is correct increase category score 
+                if (selectedAnswer.value === question.correctAnswerId){
+                    category.score++
+                }
+            }
+        }
+        questionCounter++;
+        // Deletes question from array of questions
+        deleteQuestion(question);
+        //Generates new question question
+        if (questionCounter <= totalQuestions) {
+            question = generateQuestion()
+            // Displays question counter
+            document.getElementById("question-counter").textContent = questionCounter
+            //adds and update the timer
+            startTime = logTime()
+            startTimer()
+            updateTimer()
+        } else {
+            // if the question counter is > total questions loads results page 
+            gameOver()
+
+        
+        }
+                }
+            
+
+
+/*
+* Effects same actions of next button event but for Enter keyboard button
+*/
+function enterKeyboardEvents (categories, question, questionCounter) {
+    document.getElementById("next").addEventListener("keydown", function(event) {
+        if (event.key === "Enter")
+        //stops the timer
+        stopTimer();
+        // Logs time 
+        endTime = logTime()
+        // Get the radiobutton id of selected anwer
+        let selectedAnswer = document.querySelector('input[name="answer"]:checked');
+        // checks if id of selected radiobutton matches with the correctAnswerId attribute of question object
+        for (category of categories) {
+        // Finds the category object which name matches question catergoty attribute
+            if (category.name === question.category){
+                // incerease time score in catagory object (results)
+                category.time += Math.floor(((endTime - startTime)% 60000)/1000)
+                // if answer is correct increase category score 
+                if (selectedAnswer.value === question.correctAnswerId){
+                    category.score++
+                }
+            }
+        }
+        questionCounter++;
+        // Deletes question from array of questions
+        deleteQuestion(question);
+        //Generates new question question
+        if (questionCounter <= totalQuestions) {
+            question = generateQuestion()
+            // Displays question counter
+            document.getElementById("question-counter").textContent = questionCounter
+            //adds and update the timer
+            startTime = logTime()
+            startTimer()
+            updateTimer()
+        }else {
+            // if the question counter is > total questions loads results page 
+            gameOver()
+
+        
+        }
+                })
+            
+    }
+
+/*
 *Ends the game
 */
 function gameOver () {
+    console.log(categories)
     // Store categories' scores in local storage
     localStorage.setItem('categories', JSON.stringify(categories));
     // Redirect to results.html
@@ -628,7 +707,7 @@ function gameOver () {
 
 
 /*
-* Draws a star plot of the scores
+* Draws a radar plot of the scores
 */
 function radarPlot (categories) {
     console.log(categories)
@@ -655,15 +734,25 @@ function radarPlot (categories) {
     },
     options: {
         scale: {
+            pointLabels: {
+                fontSize: 14, // Adjust the font size as needed
+                fontWeight: 'bold', // Set the font weight to 'bold'
+            },
         ticks: {
             beginAtZero: true,
             max: 5, // Adjust the maximum value as needed
             fontSize: 5, // Adjust the font size as needed
         },
+        angleLines: {
+            color: 'rgba(0, 0, 0, 1)', // Adjust the color of angle lines
+            lineWidth: 10, // Adjust the line width of angle lines
+        },
+        gridLines: {
+            circular: true,
         },
     },
  
     
     }
-    )};
+})};
      

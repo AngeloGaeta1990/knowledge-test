@@ -32,7 +32,7 @@
                   <h3 id="category"></h3>
                   <p id ="question"></p>
                   <div id="answers">
-                  <form id=answers method="POST"  action="https://formdump.codeinstitute.net/">
+                  <form id="answers-form" method="POST"  action="https://formdump.codeinstitute.net/">
                     <label for="option1">
                     <input id="option1" type="radio" name="answer" value="option1">
                      <span id="answer1"></span>
@@ -52,15 +52,16 @@
                  </div>
                  </form>
                  <div id="button-container">
+                    <a href="#" id ="exit-link">
+                        <button type="submit" id="exit" class="button">Exit</button>
+                        </a>
                   
                   <a href="#" id="result-link">
                   <button data-type="submit" id="next" class="button">Next</button>
                   </a>
                  
 
-                  <a href="#" id ="exit-link">
-                  <button type="submit" id="exit" class="button">Exit</button>
-                  </a>
+                 
                 </div>
             </div>
 
