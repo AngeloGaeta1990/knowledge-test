@@ -126,6 +126,12 @@ body{
     padding: 5px;
 }
 
+#question {
+     width: 80vw;
+     height: 20vh;
+     overflow: auto;
+}
+
 #counters {
     align-self: self-end;
     font-size: smaller;
@@ -138,6 +144,8 @@ body{
     flex-direction: column;
     padding: 5px;
     margin: 10px;
+    height: 30vh;
+    width: 80vw;
 }
 
 #answers input {
@@ -185,13 +193,12 @@ body{
 }
 
 #radar-plot {
-    width: 80vw;
-    height: 20vh ;
+    width: 40vw;
+    height: 60vh ;
     align-self: flex-end;
     padding: 5px;
     margin: 5px;
 }
-
 
 /* footer */
 
