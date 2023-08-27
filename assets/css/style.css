@@ -202,11 +202,18 @@ body{
     margin-left: 10px;
 }
 
-#results-main p {
-    font-size: medium;
+#results-summary {
+    font-size: small;
     padding: 5px;
     margin: 10px;
+    width: 80vw;
 }
+
+#results-summary th {
+    margin: 2px;
+    padding: 2px;
+    text-align: left;
+} 
 
 #radar-plot {
     width: 40vw;

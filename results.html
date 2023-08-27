@@ -28,20 +28,50 @@
     <main id="results-main">
         <div id="text-resuls">
             <h2>Thank you for playing the Wisdom trial game</h2>
-            <p>You answered <strong>History</strong> questions in <strong><span id="history-time"></span>
-                    seconds</strong> and your score is <strong><span id="history"></span></p></strong>
-            <p>You answered <strong>Geography</strong> questions in <strong><span id="geography-time"></span>
-                    seconds</strong> and your score is <strong> <span id="geography"></span> </strong></p>
-            <p>You answered <strong>Entertainment </strong>questions in <strong><span id="entertainment-time"></span>
-                    seconds </strong> and your score is <strong><span id="entertainment"></span></strong></p>
-            <p>You answered <strong>Science</strong> questions in <strong><span id="science-time"></span> seconds
-                </strong> and your score is <strong><span id="science"></span></strong></p>
-            <p>You answered <strong>Sport</strong> questions in <strong><span id="sport-time"></span> seconds </strong>
-                and your score is <strong><span id="sport"></span></strong></p>
-            <p>You answered <strong>Literature</strong> questions in <strong><span id="literature-time"></span> seconds
-                </strong> and your score is <strong><span id="literature"></span></strong></p>
-            <p>Your beat the trial in <strong><span id="total-time"></span> seconds </strong> and your total score is
-                <strong><span id="total-score"></span></p></strong>
+            <table id="results-summary">
+               <tr>
+                 <th>Subject</th>
+                 <th>Score</th>
+                 <th>Time</th> 
+               </tr>  
+                <tr>
+                    <td>History</td>
+                    <td><span id="history"></span></td>
+                    <td><span id="history-time"></span>s</td>
+                </tr>
+                <tr>
+                    <td>Geography</td>
+                    <td><span id="geography"></span></td>
+                    <td><span id="geography-time"></span>s</td>
+                </tr>
+                <tr>
+                    <td>Entertainment</td>
+                    <td><span id="entertainment"></span></td>
+                    <td><span id="entertainment-time"></span>s</td>
+                </tr>
+                <tr>
+                    <td>Science</td>
+                    <td><span id="science"></span></td>
+                    <td><span id="science-time"></span>s</td>
+                </tr>
+                <tr>
+                    <td>Sport</td>
+                    <td><span id="sport"></span></td>
+                    <td><span id="sport-time"></span>s</td>
+                </tr>
+                <tr>
+                    <td>Literature</td>
+                    <td><span id="literature"></span></td>
+                    <td><span id="literature-time"></span>s</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong><span id="total-score"></span></strong></td>
+                    <td><strong><span id="total-time"></span>s</strong></td>               
+                </tr>
+             
+            </table>
+
         </div>
         <div id="radar-plot-outer">
             <canvas id="radar-plot"></canvas>

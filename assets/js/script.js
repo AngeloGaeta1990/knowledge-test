@@ -355,7 +355,7 @@ function radarPlot(categories) {
                 r: {
                     pointLabels: {
                         font: {
-                            size: "13em",
+                            size: "12em",
                             family: "'Lumanosimo', 'sans-serif'",
                             weight: "bold",
                             color: "black",
