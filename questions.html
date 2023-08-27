@@ -1,88 +1,101 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-    content="Quiz to test your knowledge on: science, geography, sport, entertainment, literature and history">
-<meta name="keywords" content="quiz, test, culture, history, geography, science, entertainment, literature, sport">
-    
+        content="Quiz to test your knowledge on: science, geography, sport, entertainment, literature and history">
+    <meta name="keywords" content="quiz, test, culture, history, geography, science, entertainment, literature, sport">
+
     <!-- css -->
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Favicon -->
-    <link rel='shortcut icon' type='image/x-icon' href='assets/favicon/book_favicon.png' /> 
+    <link rel='shortcut icon' type='image/x-icon' href='assets/favicon/book_favicon.png' />
 
-    <title>Knowledge check</title>
+    <title>Wisdom Trial</title>
 </head>
+
 <body>
     <header>
         <div id="title">
-        <a href="index.html">    
-            <h1 id="logo"> <i class="fa-solid fa-book"></i> Knowledge check</h1>
+            <a href="index.html">
+                <h1 id="logo"> <i class="fa-solid fa-book"></i> Wisdom Trial</h1>
             </a>
         </div>
     </header>
 
-        <main>
-            <div id="questions">
-                <div id="counters">
-                    <p>question: <span id="question-counter"></span>  of <span id="total-questions"></span></p>
-                    <p>time: <span id="timer"></span></p>
-                 </div>
-                  <h3 id="category"></h3>
-                  <p id ="question"></p>
-                  <div id="answers">
-                    <label for="option1">
+    <main>
+        <div id="questions">
+            <div id="counters">
+                <p>question: <span id="question-counter"></span> of <span id="total-questions"></span></p>
+                <p>time: <span id="timer"></span></p>
+            </div>
+            <h3 id="category"></h3>
+            <p id="question"></p>
+            <div id="answers">
+                <label for="option1">
                     <input id="option1" type="radio" name="answer" value="option1">
-                     <span id="answer1"></span>
-                 </label>
-                  <label for="option2">
+                    <span id="answer1"></span>
+                </label>
+                <label for="option2">
                     <input id="option2" type="radio" name="answer" value="option2">
-                     <span id="answer2"></span>
-                 </label>
-                  <label for="option3">
+                    <span id="answer2"></span>
+                </label>
+                <label for="option3">
                     <input id="option3" type="radio" name="answer" value="option3">
                     <span id="answer3"></span>
-                  </label>
-                  <label for="option4">
+                </label>
+                <label for="option4">
                     <input id="option4" type="radio" name="answer" value="option4">
                     <span id="answer4"></span>
-                 </label>
-                 </div>
-
-                 <div id="button-container">
-                    <a href="#" id ="exit-link">
-                        <button type="submit" id="exit" class="button">Exit</button>
-                        </a>
-                  
-                  <a href="#" id="result-link">
-                  <button data-type="submit" id="next" class="button">Next</button>
-                  </a>
-                 
-
-                 
-                </div>
+                </label>
             </div>
 
+            <div id="button-container">
+                <a href="#" id="exit-link">
+                    <button type="submit" id="exit" class="button">Exit</button>
+                </a>
 
-        </main>
+                <a href="#" id="result-link">
+                    <button data-type="submit" id="next" class="button">Next</button>
+                </a>
+
+            </div>
+
+            <div id="hourglass">
+            </div>
+        </div>
+       
 
 
-        <footer>
-            <ul id="social-networks">
-                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-square-facebook"></i></a></li>
-                <li><a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="visit our YouTube channel (opens in a new tab)"><i class="fa-brands fa-youtube"></i></a></li>
-                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram"></i></a></li>
-           </ul>
-           <p>Copyright © Angelo Gaeta 2023</p>
-        </footer>
-    
-        
-         <!-- Font awesome kit -->
-         <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous">  </script>
-    
-        <!-- JavaScript  -->
-        <script type="module" src="assets/js/script.js"></script>
-    </body>
-    </html>
+    </main>
+
+
+    <footer>
+        <ul id="social-networks">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                    aria-label="visit our Facebook page (opens in a new tab)"><i
+                        class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="https://twitter.com/" target="_blank" rel="noopener"
+                    aria-label="visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener"
+                    aria-label="visit our YouTube channel (opens in a new tab)"><i class="fa-brands fa-youtube"></i></a>
+            </li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                    aria-label="visit our Instagram page (opens in a new tab)"><i
+                        class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <p>Copyright © Angelo Gaeta 2023</p>
+    </footer>
+
+
+    <!-- Font awesome kit -->
+    <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous">  </script>
+
+    <!-- JavaScript  -->
+    <script type="module" src="assets/js/script.js"></script>
+</body>
+
+</html>

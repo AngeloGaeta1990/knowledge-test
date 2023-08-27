@@ -82,19 +82,21 @@ body{
 }
 
 #intro p { 
-    margin-top: 20px;
+    margin-top: 5px;
     font-size: small;
-    padding: 20px;
-    text-align: justify;
+    padding: 5px;
+    text-align: left;
+    overflow: auto;
+    
 }
 
-
-#intro h2 {
-    font-size: 1.2rem;
+#intro p br {
+    margin-bottom: 10px;
 }
+
 
 .button {
-    margin: 50;
+    margin: 10;
     padding: 10px;
     background-color: #ba3838;
     border-radius: 10px;
@@ -128,8 +130,9 @@ body{
 
 #question {
      width: 80vw;
-     height: 20vh;
+     height: 15vh;
      overflow: auto;
+     background-color: aqua;
 }
 
 #counters {
@@ -143,32 +146,47 @@ body{
     display: flex;
     flex-direction: column;
     padding: 5px;
-    margin: 10px;
-    height: 30vh;
+    margin: 5px;
+    height: 15vh;
     width: 80vw;
+    background-color: #ba3838;
 }
 
 #answers input {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 #button-container {
-    margin: 10px;
+    margin: 5px;
     display: flex;
     flex-direction: row;
-    gap: 30px 30px;
-    justify-content: flex-start;
+    gap: 150px 150px;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    flex-wrap: wrap;
 
 }
 
 #button-container input{
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 5px;
     padding: 5px;
     background-color: #ba3838;
     width: 100px;
+    align-self: center;
+    
 }
 
+
+#hourglass {
+    background: url('../images/hourglass.gif') no-repeat center center/cover;
+    width: 80vw;
+    height: 40vh;
+    margin-bottom: 5px;
+    padding: 5px;
+    align-self: center;
+}
 
 /* results */
 #results-main {

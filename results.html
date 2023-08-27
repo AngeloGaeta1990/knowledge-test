@@ -1,65 +1,83 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-    content="Quiz to test your knowledge on: science, geography, sport, entertainment, literature and history">
-<meta name="keywords" content="quiz, test, culture, history, geography, science, entertainment, literature, sport">
-    
+        content="Quiz to test your knowledge on: science, geography, sport, entertainment, literature and history">
+    <meta name="keywords" content="quiz, test, culture, history, geography, science, entertainment, literature, sport">
+
     <!-- css -->
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Favicon -->
-    <link rel='shortcut icon' type='image/x-icon' href='assets/favicon/book_favicon.png' /> 
+    <link rel='shortcut icon' type='image/x-icon' href='assets/favicon/book_favicon.png' />
 
-    <title>Knowledge check</title>
+    <title>Wisdom Trial</title>
 </head>
+
 <body>
     <header>
         <div id="title">
-        <a href="index.html">    
-            <h1 id="logo"> <i class="fa-solid fa-book"></i> Knowledge check</h1>
+            <a href="index.html">
+                <h1 id="logo"> <i class="fa-solid fa-book"></i> Wisdom Trial</h1>
             </a>
         </div>
     </header>
-    
+
     <main id="results-main">
-    <div id="text-resuls">
-        <h2>Thank you for playing the Wisdom trial game</h2>
-        <p>You answered <strong>History</strong> questions in <strong><span id="history-time"></span> seconds</strong> and your score is <strong><span id="history"></span></p></strong> 
-        <p>You answered <strong>Geography</strong> questions in <strong><span id="geography-time"></span> seconds</strong> and your score is <strong> <span id="geography"></span> </strong></p>
-        <p>You answered <strong>Entertainment </strong>questions in <strong><span id="entertainment-time"></span> seconds </strong> and your score is <strong><span id="entertainment"></span></strong></p>
-        <p>You answered <strong>Science</strong>  questions in <strong><span id="science-time"></span> seconds </strong> and your score is <strong><span id="science"></span></strong></p>
-        <p>You answered <strong>Sport</strong> questions in <strong><span id="sport-time"></span> seconds </strong> and your score is <strong><span id="sport"></span></strong></p>
-        <p>You answered <strong>Literature</strong> questions in <strong><span id="literature-time"></span> seconds </strong> and your score is <strong><span id="literature"></span></strong></p>
-        <p>Your beat the trial in <strong><span id="total-time"></span> seconds </strong> and your total score is <strong><span id="total-score"></span></p></strong>
-    </div>
-    <div id="radar-plot-outer">
-        <canvas id="radar-plot"></canvas>
-    </div>
+        <div id="text-resuls">
+            <h2>Thank you for playing the Wisdom trial game</h2>
+            <p>You answered <strong>History</strong> questions in <strong><span id="history-time"></span>
+                    seconds</strong> and your score is <strong><span id="history"></span></p></strong>
+            <p>You answered <strong>Geography</strong> questions in <strong><span id="geography-time"></span>
+                    seconds</strong> and your score is <strong> <span id="geography"></span> </strong></p>
+            <p>You answered <strong>Entertainment </strong>questions in <strong><span id="entertainment-time"></span>
+                    seconds </strong> and your score is <strong><span id="entertainment"></span></strong></p>
+            <p>You answered <strong>Science</strong> questions in <strong><span id="science-time"></span> seconds
+                </strong> and your score is <strong><span id="science"></span></strong></p>
+            <p>You answered <strong>Sport</strong> questions in <strong><span id="sport-time"></span> seconds </strong>
+                and your score is <strong><span id="sport"></span></strong></p>
+            <p>You answered <strong>Literature</strong> questions in <strong><span id="literature-time"></span> seconds
+                </strong> and your score is <strong><span id="literature"></span></strong></p>
+            <p>Your beat the trial in <strong><span id="total-time"></span> seconds </strong> and your total score is
+                <strong><span id="total-score"></span></p></strong>
+        </div>
+        <div id="radar-plot-outer">
+            <canvas id="radar-plot"></canvas>
+        </div>
         <div class="spacing"></div>
-     
+
     </main>
 
-   
+
     <footer>
         <ul id="social-networks">
-            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-square-facebook"></i></a></li>
-            <li><a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="visit our YouTube channel (opens in a new tab)"><i class="fa-brands fa-youtube"></i></a></li>
-            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram"></i></a></li>
-       </ul>
-       <p>Copyright © Angelo Gaeta 2023</p>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                    aria-label="visit our Facebook page (opens in a new tab)"><i
+                        class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="https://twitter.com/" target="_blank" rel="noopener"
+                    aria-label="visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener"
+                    aria-label="visit our YouTube channel (opens in a new tab)"><i class="fa-brands fa-youtube"></i></a>
+            </li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                    aria-label="visit our Instagram page (opens in a new tab)"><i
+                        class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <p>Copyright © Angelo Gaeta 2023</p>
     </footer>
 
-    
-     <!-- Font awesome kit -->
-     <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous">  </script>
+
+    <!-- Font awesome kit -->
+    <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous">  </script>
 
     <!-- JavaScript  -->
     <script type="module" src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    
+
 </body>
+
 </html>

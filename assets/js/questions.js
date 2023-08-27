@@ -14,7 +14,7 @@ export let questions = [
     {
         id: 2 ,
         category: "Geography" ,
-        question: "Which of the following is the capital of Norway?",
+        question: "Which is the capital of Norway?",
         answer1: "Rome",
         answer2: "Oslo",
         answer3: "Prague",
@@ -79,7 +79,7 @@ export let questions = [
     {
         id: 7 ,
         category: "History" ,
-        question: " Who was the philosopher known for the sentence 'I know that I am intelligent, because I know that I know nothing?'",
+        question: " Who promoumced 'I know that I am intelligent, because I know that I know nothing?'",
         answer1: "Socrates",
         answer2: "Plato",
         answer3: "Aristotle",
@@ -104,7 +104,7 @@ export let questions = [
     {
        id: 9,
        category: "Entertainment",
-       question: "In which of the following bands the singer commited suicide?",
+       question: "Which band is famous for the song 'Smells like teen spirits'?",
        answer1: "30 seconds to Mars",
        answer2: "Of Monsters and Man",
        answer3: "Imagine Dragons",
@@ -128,19 +128,19 @@ export let questions = [
      {
         id: 11,
         category: "Sport",
-        question: "What is the meaning of the world Aikido",
-        answer1: "The way of harmony with the universe",
-        answer2: "Happiness in the peace of mind",
-        answer3: "Use enemy strength against him",
-        answer4: "Balance and Armony",
-        correctAnswer: "The way of harmony with the universe",
+        question: "Which form of martial art requires practitioners to don a traditional garment called a Hakama?",
+        answer1: "Aikido",
+        answer2: "Kung fu",
+        answer3: "Karate",
+        answer4: "Jujutsu",
+        correctAnswer: "Aikido",
         correctAnswerId: "option1",
      },
 
      {
         id: 12,
         category: "Literature",
-        question: "Which poem start with the following sentence 'This solitary hill has always been dear to me And this hedge...,'? ",
+        question: "'This solitary hill has always been dear to me And this hedge...,' is the beginning of ? ",
         answer1: "Divine Comedy",
         answer2: "Macbeth ",
         answer3: "The Infinite",
@@ -176,7 +176,7 @@ export let questions = [
      {
         id: 15,
         category: "Entertainment",
-        question: "In Which of the following movies Quentin Tarantino was not the director",
+        question: "In Which of movies Quentin Tarantino was not the director?",
         answer1: "The Hateful Eight",
         answer2: "Pulp fiction",
         answer3: "Eyes Wide Shut",
@@ -189,7 +189,7 @@ export let questions = [
      {
         id: 16,
         category: "Science",
-        question: "What is the chemical formula for magnesium chloride, and how does it represent the composition of the compound?",
+        question: "What is the chemical formula for magnesium chloride?",
         answer1: "MgCl",
         answer2: "MgCl2",
         answer3: "Mg2Cl",
@@ -215,7 +215,7 @@ export let questions = [
      {
         id: 18,
         category: "Literature",
-        question: "Who is the author of the novel '1984,' a dystopian classic that explores themes of government control and surveillance?",
+        question: "Who is the author of the novel '1984,'?",
         answer1: "George Orwell",
         answer2: "Aldous Huxley",
         answer3: "Ray Bradbury",
@@ -228,7 +228,7 @@ export let questions = [
      {
         id: 19,
         category: "History",
-        question: "The ancient city of Rome is said to have been founded by twin brothers Romulus and Remus. According to legend, they were raised by which animal?",
+        question: "Who is the animal who raise the twins Romolus and Remus founders of Rome?",
         answer1: "Lion",
         answer2: "Wolf",
         answer3: "Bear",
@@ -320,7 +320,7 @@ export let questions = [
      {
         id: 26,
         category: "Geography",
-        question: "Which mountain range stretches along the western coast of South America, spanning through several countries including Peru, Bolivia, and Chile?",
+        question: "Which mountain range stretches along the western coast of South America?",
         answer1: "Rocky Mountains",
         answer2: "Himalayas",
         answer3: "Alps",
