@@ -30,7 +30,7 @@ export let questions = [
     { 
         id:3 ,
         category: "Entertainment",
-        question: "Who won game of the year in 2022?",
+        question: "Who won Game of The Year in 2022?",
         answer1: "Sekiro",
         answer2: "God of War: Ragnarok",
         answer3: "Elden ring",
@@ -44,7 +44,7 @@ export let questions = [
     {
         id: 4 ,
         category: "Science" ,
-        question: "Which of the following nucleotides is in DNA but not in RNA",
+        question: "Which nucleotide is in DNA but not in RNA?",
         answer1: "Thymine T",
         answer2: "Adenine A",
         answer3: "Uracil U",
@@ -55,7 +55,7 @@ export let questions = [
     {
         id: 5 ,
         category: "Sport" ,
-        question: "Which football team won the World Global Cup in 2006",
+        question: "Which national football team won the World Cup in 2006?",
         answer1: "Germany",
         answer2: "France",
         answer3: "Italy",
@@ -79,7 +79,7 @@ export let questions = [
     {
         id: 7 ,
         category: "History" ,
-        question: " Who promoumced 'I know that I am intelligent, because I know that I know nothing?'",
+        question: "Who pronoumced:'I know that I am intelligent, because I know that I know nothing?'",
         answer1: "Socrates",
         answer2: "Plato",
         answer3: "Aristotle",
@@ -91,7 +91,7 @@ export let questions = [
     {
         id: 8,
         category: "Geography",
-        question: "Which one is longest river in the world?",
+        question: "Which one is the longest river in the world?",
         answer1: "Rio",
         answer2: "Nile",
         answer3: "Ganges",
@@ -104,7 +104,7 @@ export let questions = [
     {
        id: 9,
        category: "Entertainment",
-       question: "Which band is famous for the song 'Smells like teen spirits'?",
+       question: "Which band is famous for the song 'Smells Like Teen Spirits'?",
        answer1: "30 seconds to Mars",
        answer2: "Of Monsters and Man",
        answer3: "Imagine Dragons",
@@ -140,7 +140,7 @@ export let questions = [
      {
         id: 12,
         category: "Literature",
-        question: "'This solitary hill has always been dear to me And this hedge...,' is the beginning of ? ",
+        question: "'This solitary hill has always been dear to me ...,' is the beginning of which poem?",
         answer1: "Divine Comedy",
         answer2: "Macbeth ",
         answer3: "The Infinite",
@@ -152,7 +152,7 @@ export let questions = [
      {
         id: 13,
         category: "History",
-        question: "when did the First World War start?",
+        question: "When did the First World War start?",
         answer1: "1920",
         answer2: "1940",
         answer3: "1942",
@@ -176,7 +176,7 @@ export let questions = [
      {
         id: 15,
         category: "Entertainment",
-        question: "In Which of movies Quentin Tarantino was not the director?",
+        question: "Which film did Quentin Tarantino not direct?",
         answer1: "The Hateful Eight",
         answer2: "Pulp fiction",
         answer3: "Eyes Wide Shut",
@@ -333,7 +333,7 @@ export let questions = [
      {
         id: 27,
         category: "Entertainment",
-        question: "In which of the following games the comander Shepard is the main character?",
+        question: "In which of the following games is Commander Shepard the main character?",
         answer1: "Dragon age origins",
         answer2: "Dark Souls",
         answer3: "Baldurs Gate 3",
@@ -346,7 +346,7 @@ export let questions = [
      {
         id: 28,
         category: "Science",
-        question: "What is the process by which a solid changes directly into a gas without passing through the liquid phase?",
+        question: "What is the name of the process where a solid chages directly to the gas form?",
         answer1: "Sublimation",
         answer2: "Evaporation",
         answer3: "Condensation",

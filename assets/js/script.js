@@ -271,19 +271,19 @@ function nextQuestion() {
             }
         }
     }
+    if (questionCounter < totalQuestions) {
     questionCounter++;
     // Deletes question from array of questions
     deleteQuestion(question);
     //Generates new question question
     document.getElementById("question-counter").textContent = questionCounter
-    if (questionCounter <= totalQuestions) {
-        // Generates first question
-        question = generateQuestion();
-        // Update startQuestionTime with current time
-        startQuestionTime = logTime();
-        // Displays question counter
-        startTimer();
-        updateTimer();
+    // Generates first question
+    question = generateQuestion();
+    // Update startQuestionTime with current time
+     startQuestionTime = logTime();
+    // Displays question counter
+    startTimer();
+    updateTimer();
     } else {
         // if the question counter is > total questions loads results page 
         gameOver()
