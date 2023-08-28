@@ -18,6 +18,19 @@ body{
     font-family: 'Lumanosimo', sans-serif;
 }
 
+/* styles buttons across the all pages */
+.button {
+    margin: 10;
+    padding: 10px;
+    background-color: #ba3838;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Lumanosimo', sans-serif;
+}
+
+.button:hover {
+    cursor: pointer;
+}
 
 /* header */
 
@@ -68,7 +81,6 @@ body{
     background: url('../images/knowledge_hero_image.avif')  no-repeat center center/cover;
     width: 80vw;
     height: 50vh;
-    /* position: absolute; */
     margin: 20px;
     padding: 20px;
 }
@@ -95,21 +107,6 @@ body{
 }
 
 
-.button {
-    margin: 10;
-    padding: 10px;
-    background-color: #ba3838;
-    border-radius: 10px;
-    color: white;
-    font-family: 'Lumanosimo', sans-serif;
-}
-
-
-.button:hover {
-    cursor: pointer;
-}
-
-
 .spacing {
     width: 100vw;
     height: 5vh;
@@ -132,6 +129,7 @@ body{
      width: 80vw;
      height: 15vh;
      overflow: auto;
+     font-size: 0.85em;
 }
 
 #counters {
@@ -148,6 +146,7 @@ body{
     margin: 5px;
     height: 15vh;
     width: 80vw;
+    font-size: 0.85em;
 }
 
 #answers input {
@@ -209,11 +208,19 @@ body{
     width: 80vw;
 }
 
-#results-summary th {
+#results-summary th, #results-summary td {
     margin: 2px;
     padding: 2px;
     text-align: left;
 } 
+
+
+#results-summary td:nth-child(2), /* Selects second column */
+#results-summary td:nth-child(3),
+#results-summary th:nth-child(2),
+#results-summary th:nth-child(3) { /* Selects third column */
+  text-align: center;
+}
 
 #radar-plot {
     width: 40vw;
@@ -259,3 +266,297 @@ footer p {
     color: white;
 }
 
+/* Media query for mobile of medium size >= 375px width */
+@media screen and (min-width: 375px){
+
+    #hourglass {
+        width: 50vw;
+        height: 40vh;
+    }
+
+}
+
+
+/* Media query for mobile of large size >= 425px width */ 
+@media screen and (min-width: 425px){
+    #question {
+        font-size: 0.90em;
+   }
+
+   #answers {
+    font-size: 0.90em;
+}
+
+}
+
+/* Media query for Tablets of medium size >= 768px width */ 
+
+@media screen and (min-width: 768px){
+    #intro p { 
+        font-size: medium;
+        
+    }
+
+
+    #question {
+        font-size: 1em;
+        height: 10vh;
+   }
+
+   #answers {
+    font-size: 1em;
+    height: 20vh;
+}
+
+#answers input {
+    margin-top: 20px;
+}
+
+#button-container {
+    gap: 500px 500px;
+    margin-top:10px;   
+}
+
+
+#hourglass {
+    width: 30vw;
+    height: 30vh;
+}
+
+#results-summary {
+    font-size: medium;
+}
+
+#radar-plot-outer{
+    width: 60vw;
+    height: 60vh;
+    align-self: center;
+}
+
+.spacing {
+    width: 0px;
+    height: 0px;
+}
+
+}
+
+
+/* Media query for Laptop of small size >= 1024 px width */
+@media screen and (min-width: 1024px) {
+
+    #title h1 {
+        font-size: xx-large;
+    }
+
+    #hero-image-outer {
+        width: 80vw;
+        height: 70vh;
+    }
+    
+
+    #intro p { 
+        font-size: large;
+        
+    }
+
+    .button {
+       font-size: large;
+       width: 100px;
+       height: 50px;
+    }
+
+    #counters {
+        font-size: 0.75em;
+    }
+    
+    #question {
+        font-size: 1em;
+   }
+
+   #answers {
+    font-size: 1em;
+}
+#hourglass {
+    width: 20vw;
+    height: 20vh;
+}
+
+#radar-plot-outer{
+    width: 700px;
+    height: 600px;
+}
+
+#radar-plot{
+    margin: 0 auto;
+    width: 500px;
+    height: 700px;
+    padding: 5px;
+}
+
+    footer p {
+        font-size: large;
+    }
+
+    footer .fa-brands {
+        margin-left: 30px;
+    }
+
+
+    .fa-brands {
+        font-size: xx-large;
+    }
+
+}
+
+/* Media query for Laptop of medium size >= 1044 px width */
+@media screen and (min-width: 1044px) {
+
+#hero-image-outer {
+    width: 60vw;
+    height: 80vh;
+}
+
+#counters {
+    font-size: 1em;
+}
+
+#category {
+    font-size: 2em;
+}
+
+#question {
+    font-size: 1.50em;
+}
+
+#answers {
+    font-size: 1.50em;
+}
+
+#button-container {
+    gap: 1100px 1100px;
+    margin-top:10px;  
+}
+
+#hourglass {
+    width: 20vw;
+    height:30vh;
+    position: absolute;
+    z-index: 2;
+    top: 480px;
+}
+
+#text-results h2 {
+    font-size: larger;
+}
+
+#results-summary {
+    font-size: large;
+    padding: 5px;
+    margin: 10px;
+    width: 80vw;
+}
+
+}
+
+/* Media query for 4k monitors size >= 2560 px width */
+@media screen and (min-width: 2560px) {
+
+    #title h1 {
+        font-size: 3em;
+    }
+
+    #hero-image-outer {
+        width: 40vw;
+        height: 60vh;
+    }
+
+    #intro p { 
+        font-size: xx-large;
+        
+    }
+
+    .button {
+        font-size: xx-large;
+        width: 200px;
+        height: 100px;
+     }
+
+    #questions {
+        height: 90vh;
+    }
+
+     #counters {
+        font-size: 2em;
+    }
+
+    #category {
+        font-size: 3em;
+    }
+
+    #question {
+        font-size: 2.5em;
+    }
+    
+    
+   #answers {
+    font-size: 2.5em;
+   }
+
+  #answers input[type="radio"] {
+    width: 30px;
+    height: 30px;
+
+   } 
+
+   #button-container {
+    gap: 1950px 1950px;
+}
+
+#hourglass {
+    top: 900px;
+}
+
+#text-results h2 {
+    font-size: xx-large;
+}
+
+#results-main {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 10px;
+    height: 20vh;
+    flex: 1 0 auto;
+
+}
+#results-summary {
+    font-size: xx-large;
+    width: 50vw;
+    align-self: flex-start;
+    flex-shrink: 2;
+
+}
+
+#results-summary td, /* Selects second column */
+#results-summary th{
+  width: 200px;
+}
+
+#radar-plot-outer{
+    align-self: flex-start;
+    flex-grow: 4;
+    width: 500px;
+    height: 800px;
+
+}
+
+#radar-plot{
+    padding: 5px;
+    margin: 0 auto;
+    width: 800px;
+    height: 800px;
+    font-size: xx-large;
+}
+
+
+}

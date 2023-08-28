@@ -106,31 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     for (let button of buttons) {
-//         button.addEventListener('click', function() { 
-
-//             if (this.getAttribute("data-type") === "start"){
-//                 checkAnswer();
-//             }
-//         }
-// )}
-// })
-
-
 /*
 * Selects a random question from the list of arrays questions
 */
@@ -258,9 +233,7 @@ function nextQuestion() {
     // Record the time when the user selects an answer
     let endQuestionTime = logTime();
     let timeDifferenceInSeconds = Math.floor((endQuestionTime - startQuestionTime) / 1000);
-    console.log(question)
     for (let category of categories) {
-        console.log(category)
         // Finds the category object which name matches question catergoty attribute
         if (category.name === question["category"]) {
             // incerease time score in catagory object (results)
@@ -355,11 +328,9 @@ function radarPlot(categories) {
                 r: {
                     pointLabels: {
                         font: {
-                            size: "12em",
+                            size: "12rem",
                             family: "'Lumanosimo', 'sans-serif'",
-                            weight: "bold",
-                            color: "black",
-                            
+                            weight: "bolder",                  
                         }
                     },
 
@@ -369,12 +340,14 @@ function radarPlot(categories) {
                 legend: {
                     labels: {
                         font: {
-                            size: "13em", // Adjust the font size of the legend labels
+                            size: "13rem", // Adjust the font size of the legend labels
                             family: "'Lumanosimo', 'sans-serif'",
-                            weight: "bold",
+                            weight: "bolder",
                         },
                     }
                 },
             }
     },})
 };
+
+
