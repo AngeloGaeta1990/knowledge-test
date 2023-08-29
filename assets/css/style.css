@@ -266,6 +266,16 @@ footer p {
     color: white;
 }
 
+/* Media query for mobile of medium size >= 320px width */
+@media screen and (min-width: 320px){
+    #hourglass {
+        width: 50vw;
+        height: 30vh;
+    }
+
+}
+
+
 /* Media query for mobile of medium size >= 375px width */
 @media screen and (min-width: 375px){
 

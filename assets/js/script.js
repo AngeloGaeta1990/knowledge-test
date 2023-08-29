@@ -49,14 +49,17 @@ let questionCounter = 1;
 const totalQuestions = questions.length;
 
 
-// Initialize time counter
+// Initialize time counter StartTime is used in function StartTimer to start the timer
 let startTime;
+// Variable used to update the Timer used in functions StartTimer and StopTimer
 let timerInterval;
+// Variable used to take 1 object from the questions variables imported from questions.js used in different functions
 let question;
+// Record the time when the question was first displayed used in Document load event and nextQuestion function
 let startQuestionTime;
 
 
-
+// document load event for questions.html page 
 document.addEventListener("DOMContentLoaded", function () {
     if (window.location.href.endsWith("questions.html")) {
         //Generates first question
@@ -71,9 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Checks if exit button was pressed
         exitGameButton()
         // Generate next question for click event
-
-
-
         document.getElementById("next").addEventListener("click", function () {
             nextQuestion()
         })
@@ -88,11 +88,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
+//dcoument load event for result.html page
 document.addEventListener("DOMContentLoaded", function () {
+    //if url is results.html
     if (window.location.href.endsWith("results.html")) {
+        //move categories into stored categories and initialize total score and total time
         let storedCategories = JSON.parse(localStorage.getItem('categories'))
         let totalScore = 0
         let totalTime = 0
+        // fill in in html spans in results.html for each category times and scores and total score and time
         for (let category of storedCategories) {
             document.getElementById(category.name.toLowerCase()).textContent = category.score;
             document.getElementById(category.name.toLowerCase() + "-time").textContent = category.time;
@@ -101,6 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         document.getElementById('total-score').textContent = totalScore
         document.getElementById('total-time').textContent = totalTime
+
+        // Generates the radar plot
         radarPlot(storedCategories)
     }
 });
@@ -164,7 +171,7 @@ function startTimer() {
 }
 
 /*
-* updates the timer evaluating the difference between current time and start time
+* Updates the timer evaluating the difference between current time and start time
 * it also formats the timer in MM:SS 
 */
 function updateTimer() {
@@ -197,6 +204,7 @@ function logTime() {
 
 /*
 *Adds exit event function
+*If user clicks on exit button generates and alert and ends the game upon confirmation
 */
 function exitGameButton() {
     document.getElementById("exit").addEventListener("click", function () {
@@ -226,15 +234,14 @@ function exitGameButton() {
 function nextQuestion() {
     //stops the timer
     stopTimer();
-    // Logs time 
-    // Get the radiobutton id of selected anwer`
+    // Gets the radiobutton id of selected answer
     let selectedAnswer = document.querySelector('input[name="answer"]:checked');
-    // checks if id of selected radiobutton matches with the correctAnswerId attribute of question object
     // Record the time when the user selects an answer
     let endQuestionTime = logTime();
+    // Evalautes the time different from when the question was generated and when next was clicked
     let timeDifferenceInSeconds = Math.floor((endQuestionTime - startQuestionTime) / 1000);
+     // Finds the category object which name matches question catergoty attribute
     for (let category of categories) {
-        // Finds the category object which name matches question catergoty attribute
         if (category.name === question["category"]) {
             // incerease time score in catagory object (results)
             category.time += timeDifferenceInSeconds
@@ -248,13 +255,13 @@ function nextQuestion() {
     questionCounter++;
     // Deletes question from array of questions
     deleteQuestion(question);
-    //Generates new question question
+    // Updates the questions counter
     document.getElementById("question-counter").textContent = questionCounter
-    // Generates first question
+    // Generates a new question question
     question = generateQuestion();
     // Update startQuestionTime with current time
      startQuestionTime = logTime();
-    // Displays question counter
+    // Start and updates the timer
     startTimer();
     updateTimer();
     } else {
@@ -267,7 +274,7 @@ function nextQuestion() {
 
 
 /*
-*Ends the game
+*Ends the game movign to the results.html page
 */
 function gameOver() {
     // Store categories' scores in local storage
@@ -308,7 +315,9 @@ function radarPlot(categories) {
             scale: {
                 ticks: {
                     beginAtZero: true,
-                    max: 5, // Adjust the maximum value as needed
+                    // Max value in the radar plot
+                    max: 5,
+                    //Minimum Difference between values
                     stepSize: 1,
                 },
 
@@ -319,13 +328,14 @@ function radarPlot(categories) {
             
                 elements: {
                     line: {
-                      borderWidth:500// this will make the lines thicker
+                      borderWidth:500,
                     }
                   },
             
             },
             scales: {
                 r: {
+                    // Selects font style for category labels
                     pointLabels: {
                         font: {
                             size: "12rem",
@@ -339,8 +349,9 @@ function radarPlot(categories) {
             plugins: {
                 legend: {
                     labels: {
+                        // Selects font style for total score label
                         font: {
-                            size: "13rem", // Adjust the font size of the legend labels
+                            size: "13rem", 
                             family: "'Lumanosimo', 'sans-serif'",
                             weight: "bolder",
                         },
