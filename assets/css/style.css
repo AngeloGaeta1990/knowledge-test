@@ -11,7 +11,7 @@
 }
 
 /* General */
-body{
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@ body{
 /* header */
 
 #title {
-    background-color:#ba3838;
+    background-color: #ba3838;
     padding: 10px;
     box-shadow: 3px 2px 2px #3a3a3a;
 }
@@ -45,7 +45,7 @@ body{
     text-decoration: none;
     margin-left: 10px;
     padding: 10px;
-    
+
 }
 
 #title a:hover {
@@ -69,7 +69,6 @@ body{
     flex: 1;
     align-items: center;
     background: url('../images/page-background.jpg') no-repeat center center/cover;
-
 }
 
 #intro-header {
@@ -78,7 +77,7 @@ body{
 
 
 #hero-image-outer {
-    background: url('../images/knowledge_hero_image.avif')  no-repeat center center/cover;
+    background: url('../images/knowledge_hero_image.png') no-repeat center center/cover;
     width: 80vw;
     height: 50vh;
     margin: 20px;
@@ -87,19 +86,19 @@ body{
 
 #intro {
     margin-top: 20px;
-    flex-basis: 45% ;
+    flex-basis: 45%;
     width: 80vw;
     padding: 10px;
 
 }
 
-#intro p { 
+#intro p {
     margin-top: 5px;
     font-size: small;
     padding: 5px;
     text-align: left;
     overflow: auto;
-    
+
 }
 
 #intro p br {
@@ -120,16 +119,17 @@ body{
     height: 80vh;
 }
 
-#questions h3, #questions p {
+#questions h3,
+#questions p {
     margin: 10px;
     padding: 5px;
 }
 
 #question {
-     width: 80vw;
-     height: 15vh;
-     overflow: auto;
-     font-size: 0.85em;
+    width: 80vw;
+    height: 15vh;
+    overflow: auto;
+    font-size: 0.85em;
 }
 
 #counters {
@@ -165,14 +165,14 @@ body{
 
 }
 
-#button-container input{
+#button-container input {
     margin-top: 5px;
     margin-left: 5px;
     padding: 5px;
     background-color: #ba3838;
     width: 100px;
     align-self: center;
-    
+
 }
 
 
@@ -191,7 +191,8 @@ body{
     flex-direction: column;
     background: url('../images/page-background.jpg') no-repeat center center/cover;
     flex: 1 0 auto;
-    justify-content: center; /* Center items vertically */
+    justify-content: center;
+    /* Center items vertically */
 }
 
 #results-main h2 {
@@ -208,23 +209,26 @@ body{
     width: 80vw;
 }
 
-#results-summary th, #results-summary td {
+#results-summary th,
+#results-summary td {
     margin: 2px;
     padding: 2px;
     text-align: left;
-} 
+}
 
 
-#results-summary td:nth-child(2), /* Selects second column */
+#results-summary td:nth-child(2),
+/* Selects second column */
 #results-summary td:nth-child(3),
 #results-summary th:nth-child(2),
-#results-summary th:nth-child(3) { /* Selects third column */
-  text-align: center;
+#results-summary th:nth-child(3) {
+    /* Selects third column */
+    text-align: center;
 }
 
 #radar-plot {
     width: 40vw;
-    height: 60vh ;
+    height: 60vh;
     align-self: flex-end;
     padding: 5px;
     margin: 5px;
@@ -245,15 +249,18 @@ footer li {
     display: inline;
     list-style-type: none;
     padding: 5px 20px;
-} 
+}
 
 footer ul {
     list-style: none;
     padding: 20px;
     flex-basis: 100%;
-    display: flex; /* Add display flex */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */ 
+    display: flex;
+    /* Add display flex */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
 }
 
 footer p {
@@ -267,7 +274,7 @@ footer p {
 }
 
 /* Media query for mobile of medium size >= 320px width */
-@media screen and (min-width: 320px){
+@media screen and (min-width: 320px) {
     #hourglass {
         width: 50vw;
         height: 30vh;
@@ -277,7 +284,7 @@ footer p {
 
 
 /* Media query for mobile of medium size >= 375px width */
-@media screen and (min-width: 375px){
+@media screen and (min-width: 375px) {
 
     #hourglass {
         width: 50vw;
@@ -287,68 +294,161 @@ footer p {
 }
 
 
-/* Media query for mobile of large size >= 425px width */ 
-@media screen and (min-width: 425px){
+/* Media query for mobile of large size >= 425px width */
+@media screen and (min-width: 425px) {
     #question {
         font-size: 0.90em;
-   }
+    }
 
-   #answers {
-    font-size: 0.90em;
+    #answers {
+        font-size: 0.90em;
+    }
+
 }
 
+/* Media query for mobile of large size >= 448px width */
+@media screen and (min-width: 448px) {
+
+    #hourglass {
+        width: 40vw;
+        height: 30vh;
+    }
+
 }
 
-/* Media query for Tablets of medium size >= 768px width */ 
+/* Media query for mobile of large size >= 508px width */
+@media screen and (min-width: 508px) {
+    #button-container {
+        gap: 250px 250px;
+    }
 
-@media screen and (min-width: 768px){
-    #intro p { 
+}
+
+/* Media query for mobile of large size >= 592px width */
+@media screen and (min-width: 586px) {
+    #button-container {
+        gap: 390px 390px;
+    }
+
+    #hourglass {
+        width: 30vw;
+        height: 20vh;
+    }
+
+
+}
+
+
+/* Media query for mobile of large size >= 652px width */
+@media screen and (min-width: 652px) {
+    #button-container {
+        gap: 430px 430px;
+    }
+
+    #hourglass {
+        width: 30vw;
+        height: 30vh;
+    }
+
+
+}
+
+
+/* Media query for Tablets of medium size >= 768px width */
+
+@media screen and (min-width: 764px) {
+    #intro p {
         font-size: medium;
-        
+
     }
 
 
     #question {
         font-size: 1em;
         height: 10vh;
-   }
+    }
 
-   #answers {
-    font-size: 1em;
-    height: 20vh;
+    #answers {
+        font-size: 1em;
+        height: 20vh;
+    }
+
+    #answers input {
+        margin-top: 20px;
+    }
+
+    #button-container {
+        gap: 500px 500px;
+        margin-top: 10px;
+    }
+
+
+    #hourglass {
+        width: 20vw;
+        height: 20vh;
+    }
+
+    #results-summary {
+        font-size: medium;
+    }
+
+    #radar-plot-outer {
+        width: 60vw;
+        height: 60vh;
+        align-self: center;
+    }
+
+    .spacing {
+        width: 0px;
+        height: 0px;
+    }
+
 }
 
-#answers input {
-    margin-top: 20px;
-}
 
-#button-container {
-    gap: 500px 500px;
-    margin-top:10px;   
-}
+/* Media query for Tablets of medium size >= 772px width */
 
+@media screen and (min-width: 772px) {
 
-#hourglass {
-    width: 30vw;
-    height: 30vh;
-}
+    #hourglass {
+        width: 20vw;
+        height: 20vh;
+    }
 
-#results-summary {
-    font-size: medium;
-}
-
-#radar-plot-outer{
-    width: 60vw;
-    height: 60vh;
-    align-self: center;
-}
-
-.spacing {
-    width: 0px;
-    height: 0px;
-}
 
 }
+
+/* Media query for Tablets of medium size >= 894px width */
+
+@media screen and (min-width: 894px) {
+
+    #hourglass {
+        width: 20vw;
+        height: 20vh;
+    }
+
+    #button-container {
+        gap: 700px 700px;
+
+
+    }
+}
+
+
+
+/* Media query for Tablets of medium size >= 772px width */
+
+@media screen and (min-width: 934px) {
+
+    #hourglass {
+        width: 20vw;
+        height: 30vh;
+    }
+
+
+}
+
+
 
 
 /* Media query for Laptop of small size >= 1024 px width */
@@ -362,46 +462,47 @@ footer p {
         width: 80vw;
         height: 70vh;
     }
-    
 
-    #intro p { 
+
+    #intro p {
         font-size: large;
-        
+
     }
 
     .button {
-       font-size: large;
-       width: 100px;
-       height: 50px;
+        font-size: large;
+        width: 100px;
+        height: 50px;
     }
 
     #counters {
         font-size: 0.75em;
     }
-    
+
     #question {
         font-size: 1em;
-   }
+    }
 
-   #answers {
-    font-size: 1em;
-}
-#hourglass {
-    width: 20vw;
-    height: 20vh;
-}
+    #answers {
+        font-size: 1em;
+    }
 
-#radar-plot-outer{
-    width: 700px;
-    height: 600px;
-}
+    #hourglass {
+        width: 20vw;
+        height: 20vh;
+    }
 
-#radar-plot{
-    margin: 0 auto;
-    width: 500px;
-    height: 700px;
-    padding: 5px;
-}
+    #radar-plot-outer {
+        width: 700px;
+        height: 600px;
+    }
+
+    #radar-plot {
+        margin: 0 auto;
+        width: 500px;
+        height: 700px;
+        padding: 5px;
+    }
 
     footer p {
         font-size: large;
@@ -418,55 +519,187 @@ footer p {
 
 }
 
+/* * Media query for Laptop of small size >= 1032 px width */
+@media screen and (min-width: 1032px) {
+
+    #hourglass {
+        width: 10vw;
+        height: 20vh;
+    }
+
+    #button-container {
+        gap: 700px 700px;
+    }
+
+
+}
+
+
+
+
 /* Media query for Laptop of medium size >= 1044 px width */
 @media screen and (min-width: 1044px) {
 
-#hero-image-outer {
-    width: 60vw;
-    height: 80vh;
+    #hero-image-outer {
+        width: 60vw;
+        height: 80vh;
+    }
+
+    #counters {
+        font-size: 1em;
+    }
+
+    #category {
+        font-size: 2em;
+    }
+
+    #question {
+        font-size: 1.50em;
+    }
+
+    #answers {
+        font-size: 1.50em;
+    }
+
+    #button-container {
+        gap: 1100px 1100px;
+        margin-top: 10px;
+    }
+
+    #hourglass {
+        width: 20vw;
+        height: 30vh;
+        position: absolute;
+        z-index: 2;
+        top: 480px;
+    }
+
+    #text-results h2 {
+        font-size: larger;
+    }
+
+    #results-summary {
+        font-size: large;
+        padding: 5px;
+        margin: 10px;
+        width: 80vw;
+    }
+
 }
 
-#counters {
-    font-size: 1em;
-}
+/* Media query for Laptop of medium size >= 1060 px width */
+@media screen and (min-width: 1060px) {
 
-#category {
-    font-size: 2em;
-}
+    #question{
+        height: 30vh;
+    }
 
-#question {
-    font-size: 1.50em;
-}
+    #answers{
+        height: 30vh;
+    }
 
-#answers {
-    font-size: 1.50em;
-}
+    #button-container {
+        gap: 1000px 1000px;
+     
+    }
 
-#button-container {
-    gap: 1100px 1100px;
-    margin-top:10px;  
-}
+    #hourglass {
+        width: 10vw;
+        height: 20vh;
+        top: 520px;
+    }
 
-#hourglass {
-    width: 20vw;
-    height:30vh;
-    position: absolute;
-    z-index: 2;
-    top: 480px;
-}
 
-#text-results h2 {
-    font-size: larger;
-}
 
-#results-summary {
-    font-size: large;
-    padding: 5px;
-    margin: 10px;
-    width: 80vw;
-}
+   
 
 }
+
+
+/* Media query for Laptop of medium size >= 1496 px width */
+@media screen and (min-width: 1496px) {
+    
+    #questions {
+        height: 80vh;
+    }
+
+    #counters {
+        font-size: medium;
+    }
+
+    #category {
+        font-size: 2rem;
+    }
+
+
+    #hourglass {
+        width: 10vw;
+        height: 20vh;
+        top: 580px;
+    }
+
+
+    #button-container {
+        gap: 1700px 1700px;
+        margin-bottom: 20px;
+    }
+
+    #question {
+        font-size: 1.2rem;
+        height: 40vh;
+    }
+
+    #answers {
+        font-size: large;
+        height: 30vh;
+    }
+
+
+
+}
+
+
+/* Media query for Laptop of medium size >= 1538 px width */
+@media screen and (min-width: 1538px) {
+
+    #hourglass {
+        width: 10vw;
+        height: 20vh;
+    }
+
+
+    #button-container {
+        gap: 1200px 1200px;
+      
+    }
+
+}
+
+
+
+
+
+
+/* Media query for Laptop of medium size >= 1710 px width */
+@media screen and (min-width: 1710px) {
+
+    #hourglass {
+        width: 10vw;
+        height: 20vh;
+        top: 560px;
+    }
+
+
+    #button-container {
+        gap: 1400px 1400px;
+    }
+
+
+}
+
+
+
+
 
 /* Media query for 4k monitors size >= 2560 px width */
 @media screen and (min-width: 2560px) {
@@ -480,22 +713,22 @@ footer p {
         height: 60vh;
     }
 
-    #intro p { 
+    #intro p {
         font-size: xx-large;
-        
+
     }
 
     .button {
         font-size: xx-large;
         width: 200px;
         height: 100px;
-     }
+    }
 
     #questions {
         height: 90vh;
     }
 
-     #counters {
+    #counters {
         font-size: 2em;
     }
 
@@ -506,67 +739,69 @@ footer p {
     #question {
         font-size: 2.5em;
     }
-    
-    
-   #answers {
-    font-size: 2.5em;
-   }
 
-  #answers input[type="radio"] {
-    width: 30px;
-    height: 30px;
 
-   } 
+    #answers {
+        font-size: 2.5em;
+    }
 
-   #button-container {
-    gap: 1950px 1950px;
-}
+    #answers input[type="radio"] {
+        width: 30px;
+        height: 30px;
 
-#hourglass {
-    top: 900px;
-}
+    }
 
-#text-results h2 {
-    font-size: xx-large;
-}
+    #button-container {
+        gap: 1950px 1950px;
+    }
 
-#results-main {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    padding: 10px;
-    height: 20vh;
-    flex: 1 0 auto;
+    #hourglass {
+        top: 900px;
+    }
 
-}
-#results-summary {
-    font-size: xx-large;
-    width: 50vw;
-    align-self: flex-start;
-    flex-shrink: 2;
+    #text-results h2 {
+        font-size: xx-large;
+    }
 
-}
+    #results-main {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        padding: 10px;
+        height: 20vh;
+        flex: 1 0 auto;
 
-#results-summary td, /* Selects second column */
-#results-summary th{
-  width: 200px;
-}
+    }
 
-#radar-plot-outer{
-    align-self: flex-start;
-    flex-grow: 4;
-    width: 500px;
-    height: 800px;
+    #results-summary {
+        font-size: xx-large;
+        width: 50vw;
+        align-self: flex-start;
+        flex-shrink: 2;
 
-}
+    }
 
-#radar-plot{
-    padding: 5px;
-    margin: 0 auto;
-    width: 800px;
-    height: 800px;
-    font-size: xx-large;
-}
+    #results-summary td,
+    /* Selects second column */
+    #results-summary th {
+        width: 200px;
+    }
+
+    #radar-plot-outer {
+        align-self: flex-start;
+        flex-grow: 4;
+        width: 500px;
+        height: 800px;
+
+    }
+
+    #radar-plot {
+        padding: 5px;
+        margin: 0 auto;
+        width: 800px;
+        height: 800px;
+        font-size: xx-large;
+    }
 
 
 }

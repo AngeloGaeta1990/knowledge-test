@@ -281,7 +281,7 @@ export let questions = [
         id: 23,
         category: "Sport",
         question: "In which sport would you perform a slam dunk?",
-        answer1: "Soccer(Football)",
+        answer1: "Football",
         answer2: "Baseball",
         answer3: "Basketball",
         answer4: "Tennis",
