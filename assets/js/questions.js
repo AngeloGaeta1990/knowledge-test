@@ -105,7 +105,7 @@ export let questions = [
        id: 9,
        category: "Entertainment",
        question: "Which band is famous for the song 'Smells Like Teen Spirits'?",
-       answer1: "30 seconds to Mars",
+       answer1: "30 Seconds to Mars",
        answer2: "Of Monsters and Man",
        answer3: "Imagine Dragons",
        answer4: "Nirvana",

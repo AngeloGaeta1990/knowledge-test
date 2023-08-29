@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let totalTime = 0
         // fill in in html spans in results.html for each category times and scores and total score and time
         for (let category of storedCategories) {
-            document.getElementById(category.name.toLowerCase()).textContent = category.score;
+            document.getElementById(category.name.toLowerCase() + "-score").textContent = category.score;
             document.getElementById(category.name.toLowerCase() + "-time").textContent = category.time;
             totalScore += category.score
             totalTime += category.time
