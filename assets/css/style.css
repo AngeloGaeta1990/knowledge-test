@@ -130,14 +130,19 @@ body {
     height: 15vh;
     overflow: auto;
     font-size: 0.85em;
+    align-self: center;
+    padding: 5px;
 }
 
 #counters {
+    margin-top: 20px;
     align-self: self-end;
     font-size: smaller;
 }
 
-
+#category {
+    align-self: center;
+}
 
 #answers {
     display: flex;
@@ -145,8 +150,9 @@ body {
     padding: 5px;
     margin: 5px;
     height: 15vh;
-    width: 80vw;
     font-size: 0.85em;
+    align-self: center;
+    margin: 0 auto;
 }
 
 #answers input {
@@ -154,7 +160,7 @@ body {
 }
 
 #button-container {
-    margin: 5px;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     gap: 150px 150px;
@@ -368,9 +374,6 @@ footer p {
     }
 }
 
-
-
-
 /* Media query for Laptop of small size >= 1024 px width */
 @media screen and (min-width: 1024px) {
 
@@ -461,19 +464,19 @@ footer p {
     }
 
     #category {
-        font-size: 2em;
+        font-size: 1.7em;
     }
 
     #question {
-        font-size: 1.50em;
+        font-size: 1.10em;
     }
 
     #answers {
-        font-size: 1.50em;
+        font-size: 1.10em;
     }
 
     #button-container {
-        gap: 1100px 1100px;
+        gap: 600px 600px;
         margin-top: 10px;
     }
 
@@ -494,7 +497,7 @@ footer p {
 @media screen and (min-width: 1060px) {
 
     #question{
-        height: 30vh;
+        height: 10vh;
     }
 
     #answers{
@@ -502,7 +505,8 @@ footer p {
     }
 
     #button-container {
-        gap: 1000px 1000px;
+        margin-bottom: 10px;
+        gap: 800px 800px;
      
     }
 }
@@ -530,7 +534,7 @@ footer p {
 
     #question {
         font-size: 1.2rem;
-        height: 40vh;
+        height: 10vh;
     }
 
     #answers {
