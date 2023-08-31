@@ -132,6 +132,7 @@ body {
     font-size: 0.85em;
     align-self: center;
     padding: 5px;
+    text-align: center;
 }
 
 #counters {
