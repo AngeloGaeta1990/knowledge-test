@@ -176,14 +176,7 @@ body {
 }
 
 
-#hourglass {
-    background: url('../images/hourglass.gif') no-repeat center center/cover;
-    width: 80vw;
-    height: 40vh;
-    margin-bottom: 5px;
-    padding: 5px;
-    align-self: center;
-}
+
 
 /* results */
 #results-main {
@@ -273,25 +266,8 @@ footer p {
     color: white;
 }
 
-/* Media query for mobile of medium size >= 320px width */
-@media screen and (min-width: 320px) {
-    #hourglass {
-        width: 50vw;
-        height: 30vh;
-    }
-
-}
 
 
-/* Media query for mobile of medium size >= 375px width */
-@media screen and (min-width: 375px) {
-
-    #hourglass {
-        width: 50vw;
-        height: 40vh;
-    }
-
-}
 
 
 /* Media query for mobile of large size >= 425px width */
@@ -306,15 +282,7 @@ footer p {
 
 }
 
-/* Media query for mobile of large size >= 448px width */
-@media screen and (min-width: 448px) {
 
-    #hourglass {
-        width: 40vw;
-        height: 30vh;
-    }
-
-}
 
 /* Media query for mobile of large size >= 508px width */
 @media screen and (min-width: 508px) {
@@ -330,12 +298,6 @@ footer p {
         gap: 390px 390px;
     }
 
-    #hourglass {
-        width: 30vw;
-        height: 20vh;
-    }
-
-
 }
 
 
@@ -344,12 +306,6 @@ footer p {
     #button-container {
         gap: 430px 430px;
     }
-
-    #hourglass {
-        width: 30vw;
-        height: 30vh;
-    }
-
 
 }
 
@@ -382,12 +338,6 @@ footer p {
         margin-top: 10px;
     }
 
-
-    #hourglass {
-        width: 20vw;
-        height: 20vh;
-    }
-
     #results-summary {
         font-size: medium;
     }
@@ -406,46 +356,16 @@ footer p {
 }
 
 
-/* Media query for Tablets of medium size >= 772px width */
-
-@media screen and (min-width: 772px) {
-
-    #hourglass {
-        width: 20vw;
-        height: 20vh;
-    }
-
-
-}
-
 /* Media query for Tablets of medium size >= 894px width */
 
 @media screen and (min-width: 894px) {
 
-    #hourglass {
-        width: 20vw;
-        height: 20vh;
-    }
 
     #button-container {
         gap: 700px 700px;
 
 
     }
-}
-
-
-
-/* Media query for Tablets of medium size >= 772px width */
-
-@media screen and (min-width: 934px) {
-
-    #hourglass {
-        width: 20vw;
-        height: 30vh;
-    }
-
-
 }
 
 
@@ -487,10 +407,6 @@ footer p {
         font-size: 1em;
     }
 
-    #hourglass {
-        width: 20vw;
-        height: 20vh;
-    }
 
     #radar-plot-outer {
         width: 700px;
@@ -521,11 +437,6 @@ footer p {
 
 /* * Media query for Laptop of small size >= 1032 px width */
 @media screen and (min-width: 1032px) {
-
-    #hourglass {
-        width: 10vw;
-        height: 20vh;
-    }
 
     #button-container {
         gap: 700px 700px;
@@ -566,14 +477,6 @@ footer p {
         margin-top: 10px;
     }
 
-    #hourglass {
-        width: 20vw;
-        height: 30vh;
-        position: absolute;
-        z-index: 2;
-        top: 480px;
-    }
-
     #text-results h2 {
         font-size: larger;
     }
@@ -602,17 +505,6 @@ footer p {
         gap: 1000px 1000px;
      
     }
-
-    #hourglass {
-        width: 10vw;
-        height: 20vh;
-        top: 520px;
-    }
-
-
-
-   
-
 }
 
 
@@ -630,14 +522,6 @@ footer p {
     #category {
         font-size: 2rem;
     }
-
-
-    #hourglass {
-        width: 10vw;
-        height: 20vh;
-        top: 580px;
-    }
-
 
     #button-container {
         gap: 1700px 1700px;
@@ -662,12 +546,6 @@ footer p {
 /* Media query for Laptop of medium size >= 1538 px width */
 @media screen and (min-width: 1538px) {
 
-    #hourglass {
-        width: 10vw;
-        height: 20vh;
-    }
-
-
     #button-container {
         gap: 1200px 1200px;
       
@@ -683,23 +561,10 @@ footer p {
 /* Media query for Laptop of medium size >= 1710 px width */
 @media screen and (min-width: 1710px) {
 
-    #hourglass {
-        width: 10vw;
-        height: 20vh;
-        top: 560px;
-    }
-
-
     #button-container {
         gap: 1400px 1400px;
     }
-
-
 }
-
-
-
-
 
 /* Media query for 4k monitors size >= 2560 px width */
 @media screen and (min-width: 2560px) {
@@ -755,10 +620,6 @@ footer p {
         gap: 1950px 1950px;
     }
 
-    #hourglass {
-        top: 900px;
-    }
-
     #text-results h2 {
         font-size: xx-large;
     }
@@ -802,6 +663,4 @@ footer p {
         height: 800px;
         font-size: xx-large;
     }
-
-
 }

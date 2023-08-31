@@ -21,12 +21,7 @@ export let questions = [
         answer4: "Nairobi",
         correctAnswer: "Oslo",
         correctAnswerId: "option2",
-
-
-       
-
     },
-
     { 
         id:3 ,
         category: "Entertainment",
@@ -37,10 +32,7 @@ export let questions = [
         answer4: "It takes two",
         correctAnswer: "Elden ring",
         correctAnswerId: "option3",
-        
-
     },
-
     {
         id: 4 ,
         category: "Science" ,
@@ -63,7 +55,6 @@ export let questions = [
         correctAnswer: "Italy",
         correctAnswerId: "option3",
     },
-
     {
         id: 6 ,
         category: "Literature" ,
@@ -75,7 +66,6 @@ export let questions = [
         correctAnswer: "Carlo collodi",
         correctAnswerId: "option4",
     },
-
     {
         id: 7 ,
         category: "History" ,
@@ -87,7 +77,6 @@ export let questions = [
         correctAnswer: "Socrates",
         correctAnswerId: "option1",
     },
-
     {
         id: 8,
         category: "Geography",
@@ -100,7 +89,6 @@ export let questions = [
         correctAnswerId: "option2",
 
     },
-
     {
        id: 9,
        category: "Entertainment",
@@ -112,7 +100,6 @@ export let questions = [
        correctAnswer: "Nirvana",
        correctAnswerId: "option4",
      },
-
      {
         id: 10,
         category: "Science",
@@ -124,7 +111,6 @@ export let questions = [
         correctAnswer: "Diamond",
         correctAnswerId: "option4",
      },
-
      {
         id: 11,
         category: "Sport",
@@ -136,7 +122,6 @@ export let questions = [
         correctAnswer: "Aikido",
         correctAnswerId: "option1",
      },
-
      {
         id: 12,
         category: "Literature",
@@ -148,7 +133,6 @@ export let questions = [
         correctAnswer: "The Infinite",
         correctAnswerId: "option3",
      },
-
      {
         id: 13,
         category: "History",
@@ -160,7 +144,6 @@ export let questions = [
         correctAnswer: "1914",
         correctAnswerId: "option4",
      },
-
      {
         id: 14,
         category: "Geography",
@@ -172,7 +155,6 @@ export let questions = [
         correctAnswer: "Mariana Trench",
         correctAnswerId: "option1",
      },
-
      {
         id: 15,
         category: "Entertainment",
@@ -185,7 +167,6 @@ export let questions = [
         correctAnswerId: "option3",
        
      },
-
      {
         id: 16,
         category: "Science",
@@ -198,7 +179,6 @@ export let questions = [
         correctAnswerId: "option2",
 
      },
-
      {
         id: 17,
         category: "Sport",
@@ -211,7 +191,6 @@ export let questions = [
         correctAnswerId: "option2",
 
      },
-
      {
         id: 18,
         category: "Literature",
@@ -224,7 +203,6 @@ export let questions = [
         correctAnswerId: "option1",
 
      },
-
      {
         id: 19,
         category: "History",
@@ -237,7 +215,6 @@ export let questions = [
         correctAnswerId: "option2",
 
      },
-
      {
 
         id: 20,
@@ -251,7 +228,6 @@ export let questions = [
         correctAnswerId: "option3",
       
      },
-
      {
         id: 21,
         category: "Entertainment",
@@ -262,8 +238,6 @@ export let questions = [
         answer4: "Mark Ruffalo",
         correctAnswer: "Robert Downey Jr.",
         correctAnswerId: "option2",
-
-
      },
      {
         id: 22,
@@ -275,7 +249,6 @@ export let questions = [
         answer4: "Radio waves",
         correctAnswer: "Ultraviolet",
         correctAnswerId: "option2",
-
      },
      {
         id: 23,
@@ -287,9 +260,7 @@ export let questions = [
         answer4: "Tennis",
         correctAnswer: "Basketball",
         correctAnswerId: "option3",
-
      },
-
      {
         id: 24,
         category: "Literature",
@@ -300,9 +271,7 @@ export let questions = [
         answer4: " Virginia Woolf",
         correctAnswer: "Jane Austen",
         correctAnswerId: "option1",
-
      },
-
      {
         id: 25,
         category: "History",
@@ -313,10 +282,7 @@ export let questions = [
         answer4: "Florence",
         correctAnswer: "Florence",
         correctAnswerId: "option4",
-
      },
-
-     
      {
         id: 26,
         category: "Geography",
@@ -327,9 +293,7 @@ export let questions = [
         answer4: "Andes",
         correctAnswer: "Andes",
         correctAnswerId: "option4",
-
      },
-
      {
         id: 27,
         category: "Entertainment",
@@ -340,9 +304,7 @@ export let questions = [
         answer4: "Mass effect 2",
         correctAnswer: "Mass effect 2",
         correctAnswerId: "option4",
-
      },
-
      {
         id: 28,
         category: "Science",
@@ -353,9 +315,7 @@ export let questions = [
         answer4: "Melting",
         correctAnswer: "Sublimation",
         correctAnswerId: "option1",
-
      },
-
      {
         id: 29,
         category: "Sport",
@@ -366,9 +326,7 @@ export let questions = [
         answer4: "Sydney",
         correctAnswer: "Beijing",
         correctAnswerId: "option3",
-
      },
-
      {
         id: 30,
         category: "Literature",

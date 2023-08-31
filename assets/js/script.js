@@ -240,7 +240,7 @@ function nextQuestion() {
     let endQuestionTime = logTime();
     // Evalautes the time different from when the question was generated and when next was clicked
     let timeDifferenceInSeconds = Math.floor((endQuestionTime - startQuestionTime) / 1000);
-     // Finds the category object which name matches question catergoty attribute
+    // Finds the category object which name matches question catergoty attribute
     for (let category of categories) {
         if (category.name === question["category"]) {
             // incerease time score in catagory object (results)
@@ -252,18 +252,18 @@ function nextQuestion() {
         }
     }
     if (questionCounter < totalQuestions) {
-    questionCounter++;
-    // Deletes question from array of questions
-    deleteQuestion(question);
-    // Updates the questions counter
-    document.getElementById("question-counter").textContent = questionCounter
-    // Generates a new question question
-    question = generateQuestion();
-    // Update startQuestionTime with current time
-     startQuestionTime = logTime();
-    // Start and updates the timer
-    startTimer();
-    updateTimer();
+        questionCounter++;
+        // Deletes question from array of questions
+        deleteQuestion(question);
+        // Updates the questions counter
+        document.getElementById("question-counter").textContent = questionCounter
+        // Generates a new question question
+        question = generateQuestion();
+        // Update startQuestionTime with current time
+        startQuestionTime = logTime();
+        // Start and updates the timer
+        startTimer();
+        updateTimer();
     } else {
         // if the question counter is > total questions loads results page 
         gameOver()
@@ -323,15 +323,15 @@ function radarPlot(categories) {
 
                 gridLines: {
                     circular: true,
-                  
+
                 },
-            
+
                 elements: {
                     line: {
-                      borderWidth:500,
+                        borderWidth: 500,
                     }
-                  },
-            
+                },
+
             },
             scales: {
                 r: {
@@ -340,7 +340,7 @@ function radarPlot(categories) {
                         font: {
                             size: "12rem",
                             family: "'Lumanosimo', 'sans-serif'",
-                            weight: "bolder",                  
+                            weight: "bolder",
                         }
                     },
 
@@ -351,14 +351,15 @@ function radarPlot(categories) {
                     labels: {
                         // Selects font style for total score label
                         font: {
-                            size: "13rem", 
+                            size: "13rem",
                             family: "'Lumanosimo', 'sans-serif'",
                             weight: "bolder",
                         },
                     }
                 },
             }
-    },})
+        },
+    })
 };
 
 
