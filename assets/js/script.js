@@ -59,25 +59,27 @@ let question;
 let startQuestionTime;
 
 
-// document load event for questions.html page 
+
+
+
+/*
+* document load event for questions.html page takes a question randomly from an array of questions
+* displays it in the related div and starts the timer, it also includes the the next and enter button events
+* algong with the exit button event
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
     if (window.location.href.endsWith("questions.html")) {
-        //Generates first question
         question = generateQuestion()
-        // Displays question counter
         document.getElementById("question-counter").textContent = questionCounter
         document.getElementById("total-questions").textContent = totalQuestions
-        // Adds and update the timer
         startQuestionTime = logTime()
         startTimer()
         updateTimer()
-        // Checks if exit button was pressed
         exitGameButton()
-        // Generate next question for click event
         document.getElementById("next").addEventListener("click", function () {
             nextQuestion()
         })
-        // And for Enter keyboard event
         document.getElementById("answers").addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
                 nextQuestion()
@@ -88,16 +90,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+/*
+*document load event for result.html page, move the category variable into storedcategories then use it to fill the
+*table and draw the radar plot
+*/
 
-//dcoument load event for result.html page
 document.addEventListener("DOMContentLoaded", function () {
-    //if url is results.html
     if (window.location.href.endsWith("results.html")) {
         //move categories into stored categories and initialize total score and total time
         let storedCategories = JSON.parse(localStorage.getItem('categories'))
         let totalScore = 0
         let totalTime = 0
-        // fill in in html spans in results.html for each category times and scores and total score and time
         for (let category of storedCategories) {
             document.getElementById(category.name.toLowerCase() + "-score").textContent = category.score;
             document.getElementById(category.name.toLowerCase() + "-time").textContent = category.time;
@@ -107,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('total-score').textContent = totalScore
         document.getElementById('total-time').textContent = totalTime
 
-        // Generates the radar plot
         radarPlot(storedCategories)
     }
 });
@@ -127,7 +129,6 @@ function selectRandomQuestion() {
 */
 function deleteQuestion(currentQuestion) {
     let currentQuestionIndex = questions.indexOf(currentQuestion);
-    // checks if the element is in the array
     if (currentQuestionIndex !== -1) {
         questions.splice(currentQuestionIndex, 1);
     }
@@ -136,7 +137,6 @@ function deleteQuestion(currentQuestion) {
 /*
 *Generates a question
 */
-
 function generateQuestion() {
     let question = selectRandomQuestion();
     document.getElementById('category').textContent = question["category"];
@@ -160,14 +160,14 @@ function generateQuestion() {
 //Timer functions
 
 /*
-* Starts the timer
+* Starts the timer and updates it every second
 */
 function startTimer() {
     startTime = Date.now();
-    updateTimer(); // Update timer initially
+    updateTimer();
     timerInterval = setInterval(function () {
         updateTimer()
-    }, 1000); // Update every second
+    }, 1000); 
 }
 
 /*
@@ -186,11 +186,10 @@ function updateTimer() {
 }
 
 /*
-* Ends the timer
+*  Reset timerInterval to undefined after stopping
 */
 function stopTimer() {
     clearInterval(timerInterval);
-    // Reset timerInterval to undefined after stopping
     timerInterval = undefined;
 }
 
@@ -219,33 +218,17 @@ function exitGameButton() {
 
 /*
 *Manages all the events happening after click event on next button:
-* Stops the timer
-* Logs time 
-* Get the radiobutton id of selected anwer
-* Checks if id of selected radiobutton matches with the correctAnswerId attribute of question object
-* Finds the category object which name matches question catergoty attribute
-* Incerease time score in catagory object (results)
-* If answer is correct increase score in category object (results)
-* Increase the question counter by 1
-* Delete question object from array of questions
-* Picks new question from the array 
-* if the question counter is > total questions then it loads results page
+* Stops the timer, Logs time, increase question score and time score where necessary
+* Deletes the asked question, generates a new and sends to the result page after the last question
 */
 function nextQuestion() {
-    //stops the timer
     stopTimer();
-    // Gets the radiobutton id of selected answer
     let selectedAnswer = document.querySelector('input[name="answer"]:checked');
-    // Record the time when the user selects an answer
     let endQuestionTime = logTime();
-    // Evalautes the time different from when the question was generated and when next was clicked
     let timeDifferenceInSeconds = Math.floor((endQuestionTime - startQuestionTime) / 1000);
-    // Finds the category object which name matches question catergoty attribute
     for (let category of categories) {
         if (category.name === question["category"]) {
-            // incerease time score in catagory object (results)
             category.time += timeDifferenceInSeconds
-            // if answer is correct increase category score 
             if (selectedAnswer.value === question.correctAnswerId) {
                 category.score++
             }
@@ -253,19 +236,14 @@ function nextQuestion() {
     }
     if (questionCounter < totalQuestions) {
         questionCounter++;
-        // Deletes question from array of questions
         deleteQuestion(question);
-        // Updates the questions counter
         document.getElementById("question-counter").textContent = questionCounter
-        // Generates a new question question
         question = generateQuestion();
-        // Update startQuestionTime with current time
         startQuestionTime = logTime();
-        // Start and updates the timer
         startTimer();
         updateTimer();
     } else {
-        // if the question counter is > total questions loads results page 
+        //Sends to the result page
         gameOver()
 
 
@@ -274,12 +252,11 @@ function nextQuestion() {
 
 
 /*
-*Ends the game movign to the results.html page
+*Ends the game movign to the results.html page, and it also store the variable category to move it to the result page
 */
 function gameOver() {
-    // Store categories' scores in local storage
+  
     localStorage.setItem('categories', JSON.stringify(categories));
-    // Redirect to results.html
     window.location.href = "results.html";
     let resultLink = document.getElementById("result-link");
     resultLink.href = "results.html";
@@ -288,6 +265,7 @@ function gameOver() {
 
 /*
 * Draws a radar plot of the scores
+* Taken from library https://cdn.jsdelivr.net/npm/chart.js
 */
 function radarPlot(categories) {
     // Extract data
