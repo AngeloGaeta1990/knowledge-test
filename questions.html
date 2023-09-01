@@ -25,15 +25,22 @@
         </div>
     </header>
 
-    <main>
-        <div id="questions">
-            <div id="counters">
+    <main id="questions">
+           
+            <!-- counters section -->
+            <section id="counters">
                 <p>question: <span id="question-counter"></span> of <span id="total-questions"></span></p>
                 <p>time: <span id="timer"></span></p>
-            </div>
-            <h3 id="category"></h3>
-            <p id="question"></p>
-            <div id="answers">
+            </section>
+           
+            <!-- Question section -->
+           <section id="question-container">
+             <h3 id="category"></h3>
+             <p id="question"></p>
+            </section>
+            
+            <!-- Answers section -->
+            <section id="answers">
                 <label for="option1">
                     <input id="option1" type="radio" name="answer" value="option1">
                     <span id="answer1"></span>
@@ -50,12 +57,13 @@
                     <input id="option4" type="radio" name="answer" value="option4">
                     <span id="answer4"></span>
                 </label>
-            </div>
+           </section>
 
-            <div id="button-container">
+            <!-- buttons sections -->
+            <section id="button-container">
                     <button type="submit" id="exit" class="button">Exit</button>
                     <button data-type="submit" id="next" class="button">Next</button>                    
-            </div>
+            </section>
 
             <div id="hidden-exit">
                 <p>Are you sure you want to leave the game?</p>

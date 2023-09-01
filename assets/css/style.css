@@ -84,6 +84,13 @@ body {
     padding: 20px;
 }
 
+#intro-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #intro {
     margin-top: 20px;
     flex-basis: 45%;
@@ -98,17 +105,10 @@ body {
     padding: 5px;
     text-align: left;
     overflow: auto;
-
 }
 
 #intro p br {
     margin-bottom: 10px;
-}
-
-
-.spacing {
-    width: 100vw;
-    height: 5vh;
 }
 
 /* Questions */
@@ -125,14 +125,20 @@ body {
     padding: 5px;
 }
 
+#question-container {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #question {
     width: 80vw;
     height: 15vh;
     overflow: auto;
     font-size: 0.85em;
-    align-self: center;
+    margin: 10px;
     padding: 5px;
-    text-align: center;
 }
 
 #counters {
@@ -322,6 +328,11 @@ footer p {
         gap: 20% 20%;
     }
 
+    #radar-plot {
+        width: 60vw;
+        height: 30vh;
+    }
+
 }
 
 /* Media query for Tablets of medium size >= 768px width */
@@ -379,7 +390,8 @@ footer p {
 
     #intro p {
         font-size: large;
-
+        width: 70%;
+        margin: 0 auto;
     }
 
     .button {
@@ -406,14 +418,14 @@ footer p {
 
 
     #radar-plot-outer {
-        width: 700px;
-        height: 600px;
+        width: 80vw;
+        height: 60vh;
     }
 
     #radar-plot {
         margin: 0 auto;
-        width: 500px;
-        height: 700px;
+        width: 95%;
+        height: 95%;
         padding: 5px;
     }
 
