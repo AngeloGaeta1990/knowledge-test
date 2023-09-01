@@ -70,19 +70,19 @@ let startQuestionTime;
 
 document.addEventListener("DOMContentLoaded", function () {
     if (window.location.href.endsWith("questions.html")) {
-        question = generateQuestion()
-        document.getElementById("question-counter").textContent = questionCounter
-        document.getElementById("total-questions").textContent = totalQuestions
-        startQuestionTime = logTime()
-        startTimer()
-        updateTimer()
-        exitGameButton()
+        question = generateQuestion();
+        document.getElementById("question-counter").textContent = questionCounter;
+        document.getElementById("total-questions").textContent = totalQuestions;
+        startQuestionTime = logTime();
+        startTimer();
+        updateTimer();
+        exitGameButton();
         document.getElementById("next").addEventListener("click", function () {
-            nextQuestion()
+            nextQuestion();
         })
         document.getElementById("answers").addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
-                nextQuestion()
+                nextQuestion();
             }
         })
 
@@ -98,19 +98,19 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     if (window.location.href.endsWith("results.html")) {
         //move categories into stored categories and initialize total score and total time
-        let storedCategories = JSON.parse(localStorage.getItem('categories'))
-        let totalScore = 0
-        let totalTime = 0
+        let storedCategories = JSON.parse(localStorage.getItem('categories'));
+        let totalScore = 0;
+        let totalTime = 0;
         for (let category of storedCategories) {
             document.getElementById(category.name.toLowerCase() + "-score").textContent = category.score;
             document.getElementById(category.name.toLowerCase() + "-time").textContent = category.time;
-            totalScore += category.score
-            totalTime += category.time
+            totalScore += category.score;
+            totalTime += category.time;
         }
-        document.getElementById('total-score').textContent = totalScore
-        document.getElementById('total-time').textContent = totalTime
+        document.getElementById('total-score').textContent = totalScore;
+        document.getElementById('total-time').textContent = totalTime;
 
-        radarPlot(storedCategories)
+        radarPlot(storedCategories);
     }
 });
 
@@ -198,7 +198,7 @@ function stopTimer() {
 * Records the actual time
 */
 function logTime() {
-    return Date.now()
+    return Date.now();
 }
 
 /*
@@ -207,14 +207,15 @@ function logTime() {
 */
 function exitGameButton() {
     document.getElementById("exit").addEventListener("click", function () {
-        let confirmExit = confirm("Are you sure you want to leave the game?");
-        if (confirmExit) {
-            alert("Thank you for playing!")
-            let homepageLink = document.getElementById("exit-link")
-            homepageLink.href = "index.html"
+        let backHomeDiv = document.getElementById("hidden-exit");
+        backHomeDiv.id = "return-home";
+
+        document.getElementById("no").addEventListener("click", function () {
+            backHomeDiv.id = "hidden-exit";
+        
         }
-    })
-}
+        )}
+    )}     
 
 /*
 *Manages all the events happening after click event on next button:

@@ -1,8 +1,6 @@
 /* Importing google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lumanosimo&family=MedievalSharp&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-
-
 /* Asterisk wild card selector to override default styles added by the browser */
 * {
     padding: 0;
@@ -45,6 +43,7 @@ body {
     text-decoration: none;
     margin-left: 10px;
     padding: 10px;
+    text-align: center;
 
 }
 
@@ -118,7 +117,6 @@ body {
     flex-direction: column;
     background: url('../images/page-background.jpg') no-repeat center center/cover;
     height: 100vh;
-    background-color: aqua;
 }
 
 #questions h3,
@@ -166,7 +164,6 @@ body {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    /* gap: 150px 150px; */
     gap: 30% 30%;
     justify-content: center;
     padding: 5px;
@@ -179,13 +176,42 @@ body {
     margin-top: 5px;
     margin-left: 5px;
     padding: 5px;
-    background-color: #ba3838;
+    background-color: rgb(188, 57, 57);
     width: 100px;
     align-self: center;
 
 }
 
+#exit-container {
+    display: flex;
+    flex-direction: column;
+}
 
+
+#hidden-exit{
+   display: none;
+}
+
+#return-home {
+    width: auto;
+    height: 15vh;
+    background-color: rgba(188, 57, 57, 0.4);;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#return-home a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 10%;
+    
+}
+
+#return-home a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
 
 
 /* results */
@@ -276,10 +302,6 @@ footer p {
     color: white;
 }
 
-
-
-
-
 /* Media query for mobile of large size >= 425px width */
 @media screen and (min-width: 425px) {
     #question {
@@ -294,14 +316,6 @@ footer p {
 
 
 
-/* Media query for mobile of large size >= 508px width */
-/* @media screen and (min-width: 508px) {
-    #button-container {
-        gap: 250px 250px;
-    } */
-
-/* } */
-
 /* Media query for mobile of large size >= 592px width */
 @media screen and (min-width: 586px) {
     #button-container {
@@ -309,16 +323,6 @@ footer p {
     }
 
 }
-
-
-/* Media query for mobile of large size >= 652px width */
-/* @media screen and (min-width: 652px) {
-    #button-container {
-        gap: 430px 430px;
-    }
-
-} */
-
 
 /* Media query for Tablets of medium size >= 768px width */
 
@@ -343,11 +347,6 @@ footer p {
         margin-top: 20px;
     }
 
-    /* #button-container {
-        gap: 500px 500px;
-        margin-top: 10px;
-    } */
-
     #results-summary {
         font-size: medium;
     }
@@ -364,19 +363,6 @@ footer p {
     }
 
 }
-
-
-/* Media query for Tablets of medium size >= 894px width */
-
-/* @media screen and (min-width: 894px) {
-
-
-    #button-container {
-        gap: 700px 700px;
-
-
-    }
-} */
 
 /* Media query for Laptop of small size >= 1024 px width */
 @media screen and (min-width: 1024px) {
@@ -439,25 +425,11 @@ footer p {
         margin-left: 30px;
     }
 
-
     .fa-brands {
         font-size: xx-large;
     }
 
 }
-
-/* * Media query for Laptop of small size >= 1032 px width */
-/* @media screen and (min-width: 1032px) {
-
-    #button-container {
-        gap: 700px 700px;
-    }
-
-
-} */
-
-
-
 
 /* Media query for Laptop of medium size >= 1044 px width */
 @media screen and (min-width: 1044px) {
@@ -506,19 +478,11 @@ footer p {
     #answers{
         height: 30vh;
     }
-
-    /* #button-container {
-        margin-bottom: 10px;
-        gap: 800px 800px;
-     
-    } */
 }
-
 
 /* Media query for Laptop of medium size >= 1496 px width */
 @media screen and (min-width: 1496px) {
     
-   
     #counters {
         font-size: medium;
     }
@@ -526,11 +490,6 @@ footer p {
     #category {
         font-size: 2rem;
     }
-
-    /* #button-container {
-        gap: 1700px 1700px;
-        margin-bottom: 20px;
-    } */
 
     #question {
         font-size: 1.2rem;
@@ -541,34 +500,8 @@ footer p {
         font-size: large;
         height: 30vh;
     }
-
-
-
 }
 
-
-/* Media query for Laptop of medium size >= 1538 px width */
-/* @media screen and (min-width: 1538px) {
-
-    #button-container {
-        gap: 1200px 1200px;
-      
-    }
-
-} */
-
-
-
-
-
-
-/* Media query for Laptop of medium size >= 1710 px width */
-/* @media screen and (min-width: 1710px) {
-
-    #button-container {
-        gap: 1400px 1400px;
-    }
-} */
 
 /* Media query for 4k monitors size >= 2560 px width */
 @media screen and (min-width: 2560px) {
