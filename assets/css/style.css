@@ -60,8 +60,9 @@ body {
 
 /* Introduction */
 #main-section {
+    min-height: 100vh;
+    margin-bottom: 0px;
     display: flex;
-    /* position: relative; */
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -116,7 +117,8 @@ body {
     display: flex;
     flex-direction: column;
     background: url('../images/page-background.jpg') no-repeat center center/cover;
-    height: 80vh;
+    height: 100vh;
+    background-color: aqua;
 }
 
 #questions h3,
@@ -164,7 +166,8 @@ body {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    gap: 150px 150px;
+    /* gap: 150px 150px; */
+    gap: 30% 30%;
     justify-content: center;
     padding: 5px;
     height: 10vh;
@@ -292,29 +295,29 @@ footer p {
 
 
 /* Media query for mobile of large size >= 508px width */
-@media screen and (min-width: 508px) {
+/* @media screen and (min-width: 508px) {
     #button-container {
         gap: 250px 250px;
-    }
+    } */
 
-}
+/* } */
 
 /* Media query for mobile of large size >= 592px width */
 @media screen and (min-width: 586px) {
     #button-container {
-        gap: 390px 390px;
+        gap: 20% 20%;
     }
 
 }
 
 
 /* Media query for mobile of large size >= 652px width */
-@media screen and (min-width: 652px) {
+/* @media screen and (min-width: 652px) {
     #button-container {
         gap: 430px 430px;
     }
 
-}
+} */
 
 
 /* Media query for Tablets of medium size >= 768px width */
@@ -340,10 +343,10 @@ footer p {
         margin-top: 20px;
     }
 
-    #button-container {
+    /* #button-container {
         gap: 500px 500px;
         margin-top: 10px;
-    }
+    } */
 
     #results-summary {
         font-size: medium;
@@ -365,7 +368,7 @@ footer p {
 
 /* Media query for Tablets of medium size >= 894px width */
 
-@media screen and (min-width: 894px) {
+/* @media screen and (min-width: 894px) {
 
 
     #button-container {
@@ -373,7 +376,7 @@ footer p {
 
 
     }
-}
+} */
 
 /* Media query for Laptop of small size >= 1024 px width */
 @media screen and (min-width: 1024px) {
@@ -397,6 +400,10 @@ footer p {
         font-size: large;
         width: 100px;
         height: 50px;
+    }
+
+    #button-container {
+        gap: 10% 10%;
     }
 
     #counters {
@@ -440,14 +447,14 @@ footer p {
 }
 
 /* * Media query for Laptop of small size >= 1032 px width */
-@media screen and (min-width: 1032px) {
+/* @media screen and (min-width: 1032px) {
 
     #button-container {
         gap: 700px 700px;
     }
 
 
-}
+} */
 
 
 
@@ -476,11 +483,6 @@ footer p {
         font-size: 1.10em;
     }
 
-    #button-container {
-        gap: 600px 600px;
-        margin-top: 10px;
-    }
-
     #text-results h2 {
         font-size: larger;
     }
@@ -505,21 +507,18 @@ footer p {
         height: 30vh;
     }
 
-    #button-container {
+    /* #button-container {
         margin-bottom: 10px;
         gap: 800px 800px;
      
-    }
+    } */
 }
 
 
 /* Media query for Laptop of medium size >= 1496 px width */
 @media screen and (min-width: 1496px) {
     
-    #questions {
-        height: 80vh;
-    }
-
+   
     #counters {
         font-size: medium;
     }
@@ -528,10 +527,10 @@ footer p {
         font-size: 2rem;
     }
 
-    #button-container {
+    /* #button-container {
         gap: 1700px 1700px;
         margin-bottom: 20px;
-    }
+    } */
 
     #question {
         font-size: 1.2rem;
@@ -549,14 +548,14 @@ footer p {
 
 
 /* Media query for Laptop of medium size >= 1538 px width */
-@media screen and (min-width: 1538px) {
+/* @media screen and (min-width: 1538px) {
 
     #button-container {
         gap: 1200px 1200px;
       
     }
 
-}
+} */
 
 
 
@@ -564,12 +563,12 @@ footer p {
 
 
 /* Media query for Laptop of medium size >= 1710 px width */
-@media screen and (min-width: 1710px) {
+/* @media screen and (min-width: 1710px) {
 
     #button-container {
         gap: 1400px 1400px;
     }
-}
+} */
 
 /* Media query for 4k monitors size >= 2560 px width */
 @media screen and (min-width: 2560px) {
