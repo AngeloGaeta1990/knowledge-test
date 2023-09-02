@@ -1,7 +1,6 @@
 // Imports list of questions for questions.js file
 import { questions } from './questions.js'
 
-
 //List of categories with scores and times
 let categories = [
     {
@@ -9,37 +8,31 @@ let categories = [
         time: 0,
         score: 0,
     },
-
     {
         name: "Geography",
         time: 0,
         score: 0,
     },
-
     {
         name: "Entertainment",
         time: 0,
         score: 0,
     },
-
     {
         name: "Science",
         time: 0,
         score: 0,
     },
-
     {
         name: "Sport",
         time: 0,
         score: 0,
     },
-
     {
         name: "Literature",
         time: 0,
         score: 0,
     },
-
 ];
 
 // Count questions starting from the first
@@ -57,9 +50,6 @@ let timerInterval;
 let question;
 // Record the time when the question was first displayed used in Document load event and nextQuestion function
 let startQuestionTime;
-
-
-
 
 
 /*
@@ -85,8 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 nextQuestion();
             }
         })
-
-
     }
 });
 
@@ -94,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
 *document load event for result.html page, move the category variable into storedcategories then use it to fill the
 *table and draw the radar plot
 */
-
 document.addEventListener("DOMContentLoaded", function () {
     if (window.location.href.endsWith("results.html")) {
         //move categories into stored categories and initialize total score and total time
@@ -114,14 +101,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
 /*
 * Selects a random question from the list of arrays questions
 */
 function selectRandomQuestion() {
     let currentQuestionIndex = Math.floor(Math.random() * questions.length);
     let currentQuestion = questions[currentQuestionIndex];
-    return currentQuestion
+    return currentQuestion;
 }
 
 /*
@@ -146,19 +132,14 @@ function generateQuestion() {
     document.getElementById('answer3').textContent = question["answer3"];
     document.getElementById('answer4').textContent = question["answer4"];
 
-
     // Clear radio button selection
     let radioButtons = document.querySelectorAll('input[name="answer"]');
     radioButtons.forEach(radioButton => {
         radioButton.checked = false;
     });
-    return question
+    return question;
 }
-
-
-
 //Timer functions
-
 /*
 * Starts the timer and updates it every second
 */
@@ -167,7 +148,7 @@ function startTimer() {
     updateTimer();
     timerInterval = setInterval(function () {
         updateTimer()
-    }, 1000); 
+    }, 1000);
 }
 
 /*
@@ -193,7 +174,6 @@ function stopTimer() {
     timerInterval = undefined;
 }
 
-
 /*
 * Records the actual time
 */
@@ -212,10 +192,12 @@ function exitGameButton() {
 
         document.getElementById("no").addEventListener("click", function () {
             backHomeDiv.id = "hidden-exit";
-        
+
         }
-        )}
-    )}     
+        )
+    }
+    )
+}
 
 /*
 *Manages all the events happening after click event on next button:
@@ -251,18 +233,15 @@ function nextQuestion() {
     }
 }
 
-
 /*
 *Ends the game movign to the results.html page, and it also store the variable category to move it to the result page
 */
 function gameOver() {
-  
     localStorage.setItem('categories', JSON.stringify(categories));
     window.location.href = "results.html";
     let resultLink = document.getElementById("result-link");
     resultLink.href = "results.html";
 }
-
 
 /*
 * Draws a radar plot of the scores
@@ -299,18 +278,15 @@ function radarPlot(categories) {
                     //Minimum Difference between values
                     stepSize: 1,
                 },
-
                 gridLines: {
                     circular: true,
 
                 },
-
                 elements: {
                     line: {
                         borderWidth: 500,
                     }
                 },
-
             },
             scales: {
                 r: {

@@ -18,16 +18,20 @@ body {
 
 /* styles buttons across the all pages */
 .button {
-    margin: 10;
+    margin: 10px;
     padding: 10px;
     background-color: #ba3838;
     border-radius: 10px;
     color: white;
     font-family: 'Lumanosimo', sans-serif;
+    text-align: center;
+    text-decoration: none;
 }
 
 .button:hover {
     cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 /* header */
@@ -84,7 +88,7 @@ body {
     padding: 20px;
 }
 
-#intro-container{
+#intro-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,14 +198,15 @@ body {
 }
 
 
-#hidden-exit{
-   display: none;
+#hidden-exit {
+    display: none;
 }
 
 #return-home {
     width: auto;
     height: 15vh;
-    background-color: rgba(188, 57, 57, 0.4);;
+    background-color: rgba(188, 57, 57, 0.4);
+    ;
     margin: 0 auto;
     text-align: center;
 }
@@ -211,7 +216,7 @@ body {
     color: black;
     font-weight: bold;
     margin: 10%;
-    
+
 }
 
 #return-home a:hover {
@@ -227,7 +232,6 @@ body {
     background: url('../images/page-background.jpg') no-repeat center center/cover;
     flex: 1 0 auto;
     justify-content: center;
-    /* Center items vertically */
 }
 
 #results-main h2 {
@@ -291,11 +295,8 @@ footer ul {
     padding: 20px;
     flex-basis: 100%;
     display: flex;
-    /* Add display flex */
     justify-content: center;
-    /* Center items horizontally */
     align-items: center;
-    /* Center items vertically */
 }
 
 footer p {
@@ -320,8 +321,6 @@ footer p {
 
 }
 
-
-
 /* Media query for mobile of large size >= 592px width */
 @media screen and (min-width: 586px) {
     #button-container {
@@ -336,13 +335,11 @@ footer p {
 }
 
 /* Media query for Tablets of medium size >= 768px width */
-
 @media screen and (min-width: 764px) {
     #intro p {
         font-size: medium;
 
     }
-
 
     #question {
         font-size: 1em;
@@ -372,12 +369,10 @@ footer p {
         width: 0px;
         height: 0px;
     }
-
 }
 
 /* Media query for Laptop of small size >= 1024 px width */
 @media screen and (min-width: 1024px) {
-
     #title h1 {
         font-size: xx-large;
     }
@@ -483,18 +478,18 @@ footer p {
 /* Media query for Laptop of medium size >= 1060 px width */
 @media screen and (min-width: 1060px) {
 
-    #question{
+    #question {
         height: 10vh;
     }
 
-    #answers{
+    #answers {
         height: 30vh;
     }
 }
 
 /* Media query for Laptop of medium size >= 1496 px width */
 @media screen and (min-width: 1496px) {
-    
+
     #counters {
         font-size: medium;
     }
