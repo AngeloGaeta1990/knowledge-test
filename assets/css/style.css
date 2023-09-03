@@ -530,7 +530,7 @@ footer p {
     .button {
         font-size: xx-large;
         width: 200px;
-        height: 100px;
+        height: 80px;
     }
 
     #questions {
@@ -561,7 +561,7 @@ footer p {
     }
 
     #button-container {
-        gap: 1950px 1950px;
+        gap: 20% 20%;
     }
 
     #text-results h2 {
