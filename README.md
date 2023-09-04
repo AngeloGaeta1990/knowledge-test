@@ -32,8 +32,8 @@ Nevertheless, it scales without issues on different screen sizes: mobiles (small
 * [The Wisdom trial](#the-wisdom-trial)
     * [Site Overview](#site-overview)
 * [Who is he user](#who-is-the-user)
-    * [Site Aims](#site-aims)
-    * [Aims methods](#aims-methods)
+    * [Aims](#aims)
+    * [Goals achieved](#goals-achieved)
 * [Typography](#typography)
 * [Current Features](#current-features)
     * [Header element](#header-element)
@@ -60,18 +60,18 @@ Nevertheless, it scales without issues on different screen sizes: mobiles (small
 * Users who simply want to have a quiz night with friends or during events (questions and category can be easily changed/added).
 
 
-### Site Aims
+### Aims
 1. Create a quiz game users can use to challenge themselves.
 2. Create a robust backbone for quiz games which can scale easily changing/adding questions and categories.
 3. Show the users in which subjects they excell the most.
 4. Create an easy to use distraction for the user.
 ---
 
-### Aims methods: 
-1. A quiz game has been created containing 30 questions divided into 6 categories
-2. Questions.js is a separate file, including a JavaScript array of objects, where questions and answers can be added and edited.
-3. At the of the game a table shows the score and the time spent for each category.
-4. The game is playable on different screen sizes, allowing the user to play on mobile, tablet or laptop during their free time.
+### Goals achieved: 
+1. A quiz game has been created containing 30 questions divided into 6 categories.
+2. A file named questions.js has been created to allow easy editing of question and answers.
+3. At the of the game a table shows the score and the time spent for each category, showing the user in which subject he excels.
+4. The game is playable on different screen sizes, allowing the user to play on mobile, tablet or laptop during their free time on the device the feel more confortable with.
 
 ### Typography 
 ---
@@ -106,10 +106,10 @@ The user can select the correct answer by clicking on the radio button
 
 ### Buttons
 The buttons sections show two buttons: "Next" and "Exit". 
-The user can move to the next question by clicking on the "Next" button after selecting the correct answer.
+The user can move to the next question by clicking on the "Next" button after selecting the correct answer by clicking on the radio button.
 The user can also press enter on the keyborad after selecting the answer in the radio buttons to move to the next question.
 If the user clicks on the "Exit" button, a message will appear asking the user if he wishes to continue the game, or to leave the page.
-If the user clicks on "yes", he will be back to the home page, if the user clicks on "no", the message will disappear and the user can continue the game.
+If the user clicks on "yes", he will be back to the home page, if the user clicks on "no", the message will disappear and the user will be able to continue the game.
 ![buttons section](media/buttons.png)
 
 
@@ -134,7 +134,7 @@ The footer section links to the creator socials LinkedIn and Github and contains
   * #### Buttons positioning
      * **BUG** The space between the next and exit buttons on the question page was varying too much depending on the screen size.
 
-    * **CAUSE** The buttons are part of a flexbox and the gap declaration was in pixels rather than a percentage. Also in the media query the two buttons were spaced as much as possible in pixels. 
+    * **CAUSE** The buttons are part of a flexbox and the gap declaration was setting tha gap in pixels rather than using a percentage. Also in the media query the two buttons were spaced as much as possible using pixels metrics. 
 
     * **FIX** In the CSS declaration the gap space is now set as a percentage, and does not take more than 10%-30% of the total width depending on the screen size.
 
@@ -142,61 +142,61 @@ The footer section links to the creator socials LinkedIn and Github and contains
 
     * **BUG** A giff of an hourglass was added to the question page to make it more eyecathing, nevetheless its size and positioning was varying too much depending on the screen size.
 
-    * **CAUSE** The positioning of the hourglass was set in CSS as: top: num px, this was causing the positioning of the giff to vary too much.
+    * **CAUSE** The positioning of the hourglass was set in CSS as: top: num px, this was causing the positioning of the giff to vary too much depending on the screen width.
 
     * **FIX** Although setting the positioning of the hourglass in percantange rather than pixels, improved its positining.
-    The developer decided to remove it from the design since it was not sinced with the timer and was not improving the page layout.
+    The developer decided to remove it from the design, since it was not sinced with the timer and was not improving the page layout.
 
 * ### Footer positioning
-    * **BUG** The footer was not sticking to the bottom, causing a white margin to appear at the bottom, before the footer,on screens where the content was not enoguh to fill the height.
+    * **BUG** The footer was not sticking to the bottom, causing a white margin to appear at the bottom, before the footer,on screens where the content was not enoguh to fill the viewport height.
 
-    * **CAUSE** Although the boby in CSS is set take 100% of the height, the background container was set to only contain 80% of the viewport height.
+    * **CAUSE** Although the body in CSS is set take 100% of the viewport height, the background container was set to only contain 80% of the viewport height.
 
-    * **FIX** To set the background container to take 100% of the height viewport solved the bug.
+    * **FIX** To set the background container to take 100% of the viewport height solved the bug.
 
 * ### Questions not readable
-    * **BUG** Specially on large screen devices some questions were not readable.
+    * **BUG** Specially on devices with a large screen width, the longest questions were not readable.
 
     * **CAUSE** To improve readability on larger screen, the font size was increased too much, therefore questions were having a width larger than than their div container. Moreover, they were overlaping with the answer div container.
 
     * **FIX** On devices with a large screen width the question font size is still increased compared to devices with a lower width, but the font size has been reduced compared to the previous version.
     The size of the questions and answers div has been adjusted on larger devices and on the question div an overflow auto declaration has been set.
-    In this way if in any configuration the question text is too long the user can scroll to read it. 
+    In this way if on any device width the question text is too long the user can scroll to read it. 
 
 * ### Question counter showing 31
    * **BUG** After replying to the last question, before moving to the result page, the question counter was showing 31 question answered out of 30.
 
    * **CAUSE** The function responsible for the next question was set to be activated if the question counter was <= than the total question counter. Therefore, the counter was updated even if the total amount of question displayed was = 30.
    
-   * **FIX** The function responsible for the next question now updates the counter only if the total amount of question displayed is lower than the value set to be the total questions.
+   * **FIX** The function responsible for the next question now updates the counter only if the total amount of question displayed is lower than the value set to be the total number of questions.
 
 
 * ### Radarplot not updating
-  * **BUG** The plot was always showing a value of 0 for all catageroies, although the spans reporting the time and score were updated successfully. 
+  * **BUG** The radar plot was always showing a value of 0 for all catageroies, although the spans reporting the time and score were updated successfully. 
 
-  * **CAUSE** The variable categories including the time and score for each category, when moved to the result page gets the name of storedCategory and the categories variable becomes undefined. The variable used as input for the radarplot function was categories rather storedCategories.
+  * **CAUSE** The variable categories including the time and score for each category, when moved to the result page gets the name of storedCategory and the categories variable becomes undefined. The variable used as input for the radarplot function was set as categories rather storedCategories.
 
   * **FIX** To use as input the StoredcCategories variable for the radarplot fcuntion solved the bug.
 
 * ### Categories score being always 0
    * **BUG** The categories scores and time were always 0, although the user was providing correct answers and taking time before answering.
 
-   * **CAUSE** After moving to a new html page all variables are reset. This was casuing the categories variable to be reset, after the result page was loaded.
+   * **CAUSE** After moving to a new html page all variables are reset. This was causing the categories variable to be reset, after the result page was loaded.
 
    * **FIX** To create a variable called storedCategories which is passed to the result page solved the bug.
 
 * ### Local Variables
   * **BUG** Time counter was showing as nan, although all questions were displayed, time and score were counted for only one category and the time reported was incorrect.
 
-  * **CAUSE** In oder to fix code readability the developer tried to set the timer and quesion variables as local variables, this caused the question variable to be updated only in the local fuction. When a question was generated only the category of the first question chosen was passed to the next functions.
+  * **CAUSE** In oder to improve code readability, the developer tried to set the timer and quesion variables as local variables, this caused the question variable to be updated only in the local fuction. When a question was generated only the category of the first question chosen was passed to the next functions.
   The same was happening for time counter, being local it was not updated every second as per expected behaviour.  
   
   * **FIX** To set the timer and question generated as global variables fixed the issue.
 
 * ### For loop
-  * **BUG** Questions alredy diplayed were diplayed again and the counter of the questions was showing values multiple of the question length.
+  * **BUG** Questions already diplayed were diplayed again and the counter of the questions was showing values multiple of the total question length.
 
-  * **CAUSE** A for loop repeats itself regardless of a button event. Therefore all the functions happening before the nextQuestion fuction were happening even if the user was not clicking on the next button and this was not the developer intended behaviour.
+  * **CAUSE** A for loop repeats itself regardless of a click event. Therefore, all the functions happening before the nextQuestion fuction were happening even if the user was not clicking on the next button, and this was not the developer intended behaviour.
 
   * **FIX** The functions that were supposed to happen in the for loop have been moved in click and keyboard event listeners, where a new question is chosen and the timer is updated.
 
@@ -248,12 +248,13 @@ options: {
                     //Minimum Difference between values
                     stepSize: 1,
                 },
----
+
+7. Adjust the table element in results.html according to the new categories chosen.
 
 ## Testing 
- * The project has been tested in the following browser: Google chrome, Edge, Firefox no issue has been observed.
+ * The project has been tested in the following browser: Google chrome, Edge, and Firefox, no issue has been observed.
 
- * The project as been developped using a mobile first approach, and breakpoints have been detected by gradually increasing the the screen width in devtools and adding a media query where necessary.
+ * The project as been developed using a mobile first approach, and breakpoints have been detected by gradually increasing the the screen width in devtools and adding a media query where necessary.
 
  * All buttons have been tested, and their functions meets the expected behaviour.
 
@@ -269,7 +270,7 @@ options: {
 ![lighthouse score](media/lighthouse.png)
 Lighthouse returns a score of 93 on question page.
 ---
-###Deployment {#deployment}
+### Deployment {#deployment}
 The website was deployed to GitHub pages.The website has been deployes as follow:
 1. Select Setting on the repository menu
 2. Select Pages in the menu on the right
@@ -283,6 +284,6 @@ The website was deployed to GitHub pages.The website has been deployes as follow
  * The following library has been used to implement the radar plot:
  [JavaScript library](https://cdn.jsdelivr.net/npm/chart.js)
  * Images have been taken from the following websites:
-[hero image](https://www.freepik.com/free-photos-vectors/knowledge)
-[book favicon](https://www.flaticon.com/free-icon/book_207114)
+   * Hero-image: [hero image link](https://www.freepik.com/free-photos-vectors/knowledge)
+    * Favicon  [favicon link](https://www.flaticon.com/free-icon/book_207114)
 
