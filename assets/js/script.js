@@ -1,5 +1,9 @@
+/* eslint-disable */
+/* eslint-env es6 */
+
+
 // Imports list of questions for questions.js file
-import { questions } from './questions.js'
+import { questions } from './questions.js';
 
 //List of categories with scores and times
 let categories = [
@@ -69,12 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
         exitGameButton();
         document.getElementById("next").addEventListener("click", function () {
             nextQuestion();
-        })
+        });
         document.getElementById("answers").addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
                 nextQuestion();
             }
-        })
+        });
     }
 });
 
@@ -125,12 +129,12 @@ function deleteQuestion(currentQuestion) {
 */
 function generateQuestion() {
     let question = selectRandomQuestion();
-    document.getElementById('category').textContent = question["category"];
-    document.getElementById('question').textContent = question["question"];
-    document.getElementById('answer1').textContent = question["answer1"];
-    document.getElementById('answer2').textContent = question["answer2"];
-    document.getElementById('answer3').textContent = question["answer3"];
-    document.getElementById('answer4').textContent = question["answer4"];
+    document.getElementById('category').textContent = question.category;
+    document.getElementById('question').textContent = question.question;
+    document.getElementById('answer1').textContent = question.answer1;
+    document.getElementById('answer2').textContent = question.answer2;
+    document.getElementById('answer3').textContent = question.answer3;
+    document.getElementById('answer4').textContent = question.answer4;
 
     // Clear radio button selection
     let radioButtons = document.querySelectorAll('input[name="answer"]');
@@ -147,7 +151,7 @@ function startTimer() {
     startTime = Date.now();
     updateTimer();
     timerInterval = setInterval(function () {
-        updateTimer()
+        updateTimer();
     }, 1000);
 }
 
@@ -194,9 +198,9 @@ function exitGameButton() {
             backHomeDiv.id = "hidden-exit";
 
         }
-        )
+        );
     }
-    )
+    );
 }
 
 /*
@@ -210,24 +214,24 @@ function nextQuestion() {
     let endQuestionTime = logTime();
     let timeDifferenceInSeconds = Math.floor((endQuestionTime - startQuestionTime) / 1000);
     for (let category of categories) {
-        if (category.name === question["category"]) {
-            category.time += timeDifferenceInSeconds
+        if (category.name === question.category) {
+            category.time += timeDifferenceInSeconds;
             if (selectedAnswer.value === question.correctAnswerId) {
-                category.score++
+                category.score++;
             }
         }
     }
     if (questionCounter < totalQuestions) {
         questionCounter++;
         deleteQuestion(question);
-        document.getElementById("question-counter").textContent = questionCounter
+        document.getElementById("question-counter").textContent = questionCounter;
         question = generateQuestion();
         startQuestionTime = logTime();
         startTimer();
         updateTimer();
     } else {
         //Sends to the result page
-        gameOver()
+        gameOver();
 
 
     }
@@ -314,5 +318,6 @@ function radarPlot(categories) {
                 },
             }
         },
-    })
-};
+    });
+    return chart;
+}
