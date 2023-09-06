@@ -2,23 +2,18 @@
 ---
 ## Site Overview
 ----
-The Wisdom Trial is a general knowledge quiz. The main concept of this project revolves around the symbolism of books as a source of knowledge. On the homepage, a hero image depicts a pile of ancient books with a human brain atop it.
+"The Wisdom Trial" is an engaging general knowledge quiz that celebrates the profound symbolism of books as vessels of wisdom and enlightenment.
 
-![Hero image representing a pile of ancient books](media/knowledge_hero_image.png)
+The project incorporates this symbolism into its design. The hero image, font selection, and background transport the users into an ancient tome, instilling a sense of timeless knowledge exploration.
 
-Both the font and the background are designed to evoke the style of old books, providing users with the sensation of reading an ancient tome.
+Driven by the developer's deep passion for fantasy, the entire project exudes a captivating fantasy-themed aesthetic, adding a layer of enchantment to the experience.
 
-![Representation of a question](media/question.png)
+Participants can expect questions in six subjects: Science, Geography, History, Literature, Entertainment and Sport. 
+Upon completing the quiz, a table summarizes the results. Moreover, a radar plot visually showcases the user's proficiency across the various subjects, providing a comprehensive overview of their knowledge strengths and areas for improvement.
 
-Users will encounter a variety of questions related to different subjects, including Science, Geography, History, Literature, and Sports. Clicking the "next" button will reveal a new question, while clicking the "exit" button prompts a message asking if the user wishes to continue or leave the game.
+Behind the scenes, the JavaScript algorithm powers the quiz, offering robustness and scalability. The project allows adding questions to the `questions.js` file, and categories can be modified or expanded by editing the `categories` variable in the `script.js` file. 
 
-At the end of the quiz, the results will be displayed in a table, and a radar plot will illustrate the user's proficiency in various subjects.
-
-![Representation of the result](media/result.png)
-
-he JavaScript algorithm is robust and scalable. Questions can be easily added to the `questions.js` file, and categories can be modified or expanded by editing the `categories` variable in the `script.js` file. To enhance code readability, all questions have been moved to a separate JavaScript file named `questions.js`.
-
-The website has been designed following the principles of mobile-first design. While its primary focus is on mobile devices, it scales seamlessly on various screen sizes, including mobiles (small, medium, and large), tablets, and laptops (medium, large, and 4k).
+The project follows a mobile-first approach. Nevertheless, it scales seamlessly on various screen sizes, including mobiles (small, medium, and large), tablets, and laptops (medium, large, and 4k).  
 
  ![Representation of website view on different screen sizes](media/media_query.png)
 
@@ -26,7 +21,7 @@ The website has been designed following the principles of mobile-first design. W
 ---
 - [The Wisdom trial](#the-wisdom-trial)
     - [Site Overview](#site-overview)
-- [Who is he user](#who-is-the-user)
+- [Target audience](#target-audience)
     - [Aims](#aims)
     - [Goals achieved](#goals-achieved)
 - [Typography](#typography)
@@ -40,7 +35,7 @@ The website has been designed following the principles of mobile-first design. W
     - [Result table](#result-table)
     - [Radar Plot](#radar-plot)
 - [Bugs Fixing](#bugs-fixing)
-- [Next features](#next-features)
+- [Future developments](#future-developments)
 - [How to add questions and categories](#how-to-add-questions-and-categories)
 - [Testing](#testing)
 - [Validators score](#validators)
@@ -48,12 +43,11 @@ The website has been designed following the principles of mobile-first design. W
 - [Credits](#credits) 
 
 
-## Who is the user
+## Target audience
 ---
-- Students who want to challenge themselves to determine their strong subjects.
+- Students who want to challenge themselves to determine the subjects they excel with.
 - Adults who want to assess their knowledge in different subjects.
 - Users seeking an entertaining quiz night with friends or during events.
-
 
 ### Aims
 1. Create a quiz game for users to challenge themselves.
@@ -63,40 +57,47 @@ The website has been designed following the principles of mobile-first design. W
 ---
 
 ### Goals achieved: 
-1. Developed a quiz game with 30 questions divided into 6 categories.
-2. Created a `questions.js` file for easy editing of questions and answers.
+1. Developed a quiz game with 30 questions divided into six categories.
+2. Created a `questions.js` file to facilitate the editing of questions and answers.
 3. Displayed a table at the end of the game, showing the user's scores and time spent in each category, highlighting their strengths.
 4. Designed the game to be playable on various screen sizes, including mobiles, tablets, and laptops.
 
 ### Typography 
 ---
 - Imported fonts using Google Fonts.
-- The chosen font is "Lumanosimo" to evoke the feeling of reading an ancient tome. Initially, "Medieval Sharp" was also considered, but "Lumanosimo" proved to be more visually appealing.
+- The chosen font is "Lumanosimo" to evoke the feeling of reading an ancient tome. Initially, the developer added the font "Medieval Sharp", but the use of "Lumanosimo"  only was more visually appealing.
 
 ## Current Features
 ---
 ### Header Element
-The header includes the title of the page, providing a way for users to return to the home page.
+The header includes the page title and a link to the home page.
+Thus, the users can return to the home page during the quiz or from the result page.
 ![image of the Header](media/header_title.png)
 
 ### Hero image
-The hero image represents ancient tomes, which is the central concept of the project.
+The hero image represents an ancient book, which inspired the style of the entire project.
+Indeed, the cosy feeling returned by the picture and the red tone inspired the developer to style the project accordingly.
+The developer decided to give the user the feeling of reading one of the books in the pile.
 ![Hero image](media/knowledge_hero_image.png)
 
 ### Intro
-A brief introduction informs users about the project's purpose and how to start the game. It also includes the "Start Game" button, initiating the game when clicked.
+A brief introduction informs users about the project's purpose and how to start the game. It also includes the "Start Quiz" button, initiating the game when clicked.
 ![project intro](media/intro.png)
 
 ### Counters
-The question page displays a counter showing the number of questions answered and the number of the remaining. It also features a timer that resets with each new question.
+The question page displays a counter showing the number of questions answered and the number of the remaining. It also features a timer that resets with each new question. 
+Thus,  at the end of the quiz, the user can also visualize the category where he replied faster.
 ![counters section of website](media/counters.png)
 
 ### Question
 The question section presents the question category, the question itself, and a list of answer choices. Users can select the correct answer by clicking the radio button.
+The developer wrote the questions as broadly as possible, covering different topics within the same category.  
+
 ![question section of the website](media/question_section.png)
 
 ### Buttons
-The buttons section includes two buttons: "Next" and "Exit." Users can move to the next question by clicking the "Next" button after selecting the correct answer via the radio button. Alternatively, pressing the Enter key on the keyboard after selecting an answer will also advance to the next question. Clicking the "Exit" button prompts a message asking if the user wants to continue the game or leave the page. Selecting "Yes" returns the user to the home page, while selecting "No" allows them to continue the game.
+The buttons section includes two options: "Next" and "Exit." Users can move to the next question by clicking the "Next" button after selecting the answer via the radio button. Alternatively, pressing the Enter key on the keyboard after selecting the option will also advance to the next question. Clicking the "Exit" button prompts a message asking if the user wants to continue the game or leave the page. Selecting "Yes" returns the user to the home page, while selecting "No" allows them to continue the game.
+The exit button provides a more intuitive and guided method to return to the home page if compared to the header element. 
 ![buttons section](media/buttons.png)
 
 
@@ -105,7 +106,9 @@ The results table section thanks the player for participating in the game and di
 ![table section](media/table.png)
 
 ### Radar Plot
-The results page includes a radar plot that represents the user's scores in various subjects. To create the radar plot, the following library was used:
+The results page includes a radar plot representing the user's scores in various subjects. 
+The developer chose the radar plot because it provides the user with a graphical representation of his proficiencies.
+The radar plot function uses the following library to draw the radar plot:
  [JavaScript library](https://cdn.jsdelivr.net/npm/chart.js)
 
 
@@ -183,7 +186,7 @@ The footer section links to the creator socials LinkedIn and Github and contains
 
   - **Fix:** To rectify this issue, the developer moved the functions that were supposed to execute in the for loop to the click and keyboard event listeners. These event listeners handle the selection of a new question and the updating of the timer. This change ensures that the functions execute only when necessary, improving the user experience.
 ---
-## Next features
+## Future developments
  - Create an addinional plot showing the score stats, likely a bar plot.
 
  - Add questions including pictures rather than only text.
@@ -192,57 +195,7 @@ The footer section links to the creator socials LinkedIn and Github and contains
 
 
  ---
-## How to add questions and categories
-  1. In file script.js edit the questions objects:
-      id: 28,
-      category: "Science",
-      question: "What is the name of the process where a solid chages directly to the gas form?",
-      answer1: "Sublimation",
-      answer2: "Evaporation",
-      answer3: "Condensation",
-      answer4: "Melting",
-      correctAnswer: "Sublimation",
-      correctAnswerId: "option1",
-    
-2. The id represents the question number,questions are listed from the first to the last, therefore their id varies from 1 to 30, if the user wants to add a question the new question id is 31, otherwise keep the question id but change the other attributes.
 
-3. category respresent the question category, new category can be added by replacing "Science" with "Biology" for example.
-
-4. Edit the question attribute with the new question and add the answers in the related field. Fill also the corretAnswer with the corret option and the correctAnswerid: has to be in the format "option{answer number}", therefore the accepted values are: "option1", "option2", "option3", "option4". see point 1 to check the object structure.
-
-5. Adjust the category variable accordingly in script.js
-let categories = [
-    {
-        name: "History",
-        time: 0,
-        score: 0,
-    },
-    ...
-add the name of the category or edit an existing one, if you add a new category set its time and score to 0.
-
-6.  In scripts.js edit the following part of code, by setting max as the max score you can get in any category.
-It sets the maximum value of the catagories score dispalyed in the radarplot:
-options: {
-            scale: {
-                ticks: {
-                    beginAtZero: true,
-                    // Max value in the radar plot
-                    **max**: 5,
-                    //Minimum Difference between values
-                    stepSize: 1,
-                },
-
-7. Adjust the table element in results.html according to the new categories chosen.
-
-## Testing 
- - The project has been tested in the following browser: Google chrome, Edge, and Firefox, no issue has been observed.
-
- - The project as been developed using a mobile first approach, and breakpoints have been detected by gradually increasing the the screen width in devtools and adding a media query where necessary.
-
- - All buttons have been tested, and their functions meets the expected behaviour.
-
- - No issue has been reported for questions and answers, they show without issue regardless of the screen size tested.
----
 ## Validators
 
 - HTML
@@ -260,9 +213,67 @@ The website was deployed to GitHub pages.The website has been deployes as follow
 3. Select Deploy from a branch
 4. Select main branch then click on save [Live link to Wisdom trial](https://angelogaeta1990.github.io/knowledge-test/)
 
+#### How to add questions and categories
+  1. In file script.js edit the questions objects:
+  ```javascript
+      id: 28,
+      category: "Science",
+      question: "What is the name of the process where a solid chages directly to the gas form?",
+      answer1: "Sublimation",
+      answer2: "Evaporation",
+      answer3: "Condensation",
+      answer4: "Melting",
+      correctAnswer: "Sublimation",
+      correctAnswerId: "option1",
+  ```
+
+2. The id represents the question number,questions are listed from the first to the last, therefore their id varies from 1 to 30, if the user wants to add a question the new question id is 31, otherwise keep the question id but change the other attributes.
+
+3. category respresent the question category, new category can be added by replacing "Science" with "Biology" for example.
+
+4. Edit the question attribute with the new question and add the answers in the related field. Fill also the corretAnswer with the corret option and the correctAnswerid: has to be in the format "option{answer number}", therefore the accepted values are: "option1", "option2", "option3", "option4". see point 1 to check the object structure.
+
+5. Adjust the category variable accordingly in script.js
+```javascript
+let categories = [
+    {
+        name: "History",
+        time: 0,
+        score: 0,
+    },
+    ....
+  ```
+add the name of the category or edit an existing one, if you add a new category set its time and score to 0.
+
+6.  In scripts.js edit the following part of code, by setting max as the max score you can get in any category.
+It sets the maximum value of the catagories score dispalyed in the radarplot:
+```javascript
+options: {
+            scale: {
+                ticks: {
+                    beginAtZero: true,
+                    // Max value in the radar plot
+                    **max**: 5,
+                    //Minimum Difference between values
+                    stepSize: 1,
+                },
+```
+
+7. Adjust the table element in results.html according to the new categories chosen.
+
+## Testing 
+ - The project has been tested in the following browser: Google chrome, Edge, and Firefox, no issue has been observed.
+
+ - The project as been developed using a mobile first approach, and breakpoints have been detected by gradually increasing the the screen width in devtools and adding a media query where necessary.
+
+ - All buttons have been tested, and their functions meets the expected behaviour.
+
+ - No issue has been reported for questions and answers, they show without issue regardless of the screen size tested.
 ---
+
 ## Credits 
  - OpenAI chatgpt has been used for debugging purposes.
+ - Some questions have been generated with the aid of openAI chagpt.
  - The code was implemented using VS code.
  - The following library has been used to implement the radar plot:
  [JavaScript library](https://cdn.jsdelivr.net/npm/chart.js)

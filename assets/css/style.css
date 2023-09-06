@@ -10,7 +10,7 @@
 
 /* General */
 body {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Lumanosimo', sans-serif;
@@ -57,18 +57,15 @@ body {
     margin-left: 10px;
     padding: 10px;
     text-align: center;
-
 }
 
 #title a:hover {
     text-decoration: underline;
 }
 
-
 #title h1 {
     font-size: 1.5rem;
 }
-
 
 /* Introduction */
 #main-section {
@@ -87,7 +84,6 @@ body {
 #intro-header {
     margin-top: 10px;
 }
-
 
 #hero-image-outer {
     background: url('../images/knowledge_hero_image.png') no-repeat center center/cover;
@@ -135,7 +131,7 @@ body {
     display: flex;
     flex-direction: column;
     background: url('../images/page-background.jpg') no-repeat center center/cover;
-    min-height: 100vh;
+    height: 100%;
 }
 
 #questions h2,
@@ -211,7 +207,6 @@ body {
     flex-direction: column;
 }
 
-
 #hidden-exit {
     display: none;
 }
@@ -230,14 +225,12 @@ body {
     color: black;
     font-weight: bold;
     margin: 10%;
-
 }
 
 #return-home a:hover {
     cursor: pointer;
     text-decoration: underline;
 }
-
 
 /* results */
 #results-main {
@@ -270,7 +263,6 @@ body {
     padding: 2px;
     text-align: left;
 }
-
 
 #results-summary td:nth-child(2),
 /* Selects second column */
@@ -307,9 +299,7 @@ body {
 }
 
 /* footer */
-
 footer {
-    margin-top: auto;
     background-color: #ba3838;
     display: flex;
     justify-content: center;
@@ -361,8 +351,6 @@ footer small {
         width: 50px;
         height: 30px;
     }
-
-
 }
 
 /* Media query for mobile of large size >= 592px width */
@@ -376,7 +364,6 @@ footer small {
         width: 60vw;
         height: 30vh;
     }
-
 }
 
 /* Media query for Tablets of medium size >= 768px width */
@@ -417,10 +404,7 @@ footer small {
         height: 60vh;
         align-self: center;
     }
-
-    
 }
-
 
 /* Media query for Laptop of small size >= 1024 px width */
 @media screen and (min-width: 1024px) {
@@ -432,7 +416,6 @@ footer small {
         width: 80vw;
         height: 70vh;
     }
-
 
     #intro p {
         font-size: large;
@@ -468,7 +451,6 @@ footer small {
     #answers {
         font-size: 1em;
     }
-
 
     #radar-plot-outer {
         width: 80vw;
@@ -507,7 +489,6 @@ footer small {
     .fa-brands {
         font-size: x-large;
     }
-
 }
 
 /* Media query for Laptop of medium size >= 1044 px width */
@@ -548,7 +529,6 @@ footer small {
         margin: 0 auto;
         width: 80vw;
     }
-
 }
 
 /* Media query for Laptop of medium size >= 1060 px width */
@@ -588,8 +568,6 @@ footer small {
 
 /* Media query for 4k monitors size >= 2560 px width */
 @media screen and (min-width: 2560px) {
-
-    
 
     #title h1 {
         font-size: 3em;
@@ -661,7 +639,6 @@ footer small {
         height: 20vh;
         flex: 1 0 auto;
         flex-wrap: wrap;
-
     }
 
     #results-summary {
@@ -685,7 +662,6 @@ footer small {
         width: 900px;
         height: 800px;
     }
-
 
     #radar-plot {
         padding: 5px;
@@ -725,16 +701,13 @@ footer small {
         height: 10vh;
     }
 
-
     footer small {
         font-size: z-large;
         padding: 0px;
         margin-bottom: 0px;
     }
 
-
     .fa-brands {
         font-size: 3em;
     }
-
 }
