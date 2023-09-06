@@ -19,13 +19,16 @@ body {
 /* styles buttons across the all pages */
 .button {
     margin: 10px;
-    padding: 10px;
+    padding: 5px;
     background-color: #ba3838;
     border-radius: 10px;
     color: white;
     font-family: 'Lumanosimo', sans-serif;
     text-align: center;
     text-decoration: none;
+    justify-content: center;
+    width: 50px;
+    height: 30px;
 }
 
 .button:hover {
@@ -37,7 +40,7 @@ body {
 /* adds spacing before footer */
 .spacing {
     width: 100vw;
-    height: 20vh;
+    height: 5vh;
 }
 
 /* header */
@@ -121,12 +124,18 @@ body {
     margin-bottom: 10px;
 }
 
+#start-button {
+    width: 120px;
+    padding: 5px;
+    height: 30px;
+}
+
 /* Questions */
 #questions {
     display: flex;
     flex-direction: column;
     background: url('../images/page-background.jpg') no-repeat center center/cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #questions h3,
@@ -147,7 +156,7 @@ body {
     height: 15vh;
     overflow: auto;
     font-size: 0.85em;
-    margin: 10px;
+    margin: 20px;
     padding: 5px;
 }
 
@@ -177,7 +186,7 @@ body {
 }
 
 #button-container {
-    margin-top: 20px;
+    margin-top: 80px;
     display: flex;
     flex-direction: row;
     gap: 30% 30%;
@@ -185,7 +194,6 @@ body {
     padding: 5px;
     height: 10vh;
     flex-wrap: wrap;
-
 }
 
 #button-container input {
@@ -212,9 +220,9 @@ body {
     width: auto;
     height: 15vh;
     background-color: rgba(188, 57, 57, 0.4);
-    ;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #return-home a {
@@ -245,6 +253,7 @@ body {
     padding: 5px;
     margin: 15px;
     margin-left: 10px;
+    text-align: center;
 }
 
 #results-summary {
@@ -252,6 +261,7 @@ body {
     padding: 5px;
     margin: 10px;
     width: 80vw;
+    margin: 0 auto;
 }
 
 #results-summary th,
@@ -272,11 +282,28 @@ body {
 }
 
 #radar-plot {
-    width: 40vw;
-    height: 60vh;
+    width: 100vw;
+    height: 80vh;
     align-self: flex-end;
     padding: 5px;
     margin: 5px;
+    margin: 0 auto;
+}
+
+#button-results {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20% 20%;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    flex-wrap: wrap;
+}
+
+#restart, #quit {
+    width: 100px;
+    font-size: small;
 }
 
 /* footer */
@@ -288,7 +315,6 @@ footer {
     justify-content: center;
     flex-direction: row;
     flex-flow: wrap;
-    position: fixed;
     padding: 10px;
     bottom: 0;
     width: 100vw;
@@ -313,6 +339,8 @@ footer p {
     font-size: small;
     color: white;
     padding: 10px;
+    width: 100vw;
+    text-align: center;
 }
 
 .fa-brands {
@@ -329,10 +357,17 @@ footer p {
         font-size: 0.90em;
     }
 
+    .button {
+        width: 50px;
+        height: 30px;
+    }
+
+
 }
 
 /* Media query for mobile of large size >= 592px width */
 @media screen and (min-width: 586px) {
+
     #button-container {
         gap: 20% 20%;
     }
@@ -351,6 +386,10 @@ footer p {
 
     }
 
+    #hero-image-outer{
+        height: 70vh;
+    }
+
     #question {
         font-size: 1em;
         height: 10vh;
@@ -358,11 +397,15 @@ footer p {
 
     #answers {
         font-size: 1em;
-        height: 20vh;
+        height: 30vh;
     }
 
     #answers input {
         margin-top: 20px;
+    }
+
+    #button-container{
+        margin: 20px;
     }
 
     #results-summary {
@@ -374,6 +417,8 @@ footer p {
         height: 60vh;
         align-self: center;
     }
+
+    
 }
 
 
@@ -391,7 +436,7 @@ footer p {
 
     #intro p {
         font-size: large;
-        width: 70%;
+        width: 80vw;
         margin: 0 auto;
     }
 
@@ -401,8 +446,15 @@ footer p {
         height: 50px;
     }
 
+    #start-button {
+        height: 60px;
+        width: 130px;
+        padding: 10px;
+        padding-top: 15px;
+    }
+
     #button-container {
-        gap: 10% 10%;
+        gap: 20% 20%;
     }
 
     #counters {
@@ -430,20 +482,30 @@ footer p {
         padding: 5px;
     }
 
+    #button-results a {
+        height: 30px;
+        width: 200px;
+        justify-content: center;
+
+    }
+
     footer {
-        height: 16vh;
+        height: 20vh;
     }
 
     footer p {
-        font-size: large;
+        font-size: medium;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
 
     footer .fa-brands {
+        margin-top: 5px;
         margin-left: 30px;
     }
 
     .fa-brands {
-        font-size: xx-large;
+        font-size: x-large;
     }
 
 }
@@ -454,6 +516,10 @@ footer p {
     #hero-image-outer {
         width: 60vw;
         height: 80vh;
+    }
+
+    #intro p {
+        width: 60vw;
     }
 
     #counters {
@@ -523,6 +589,8 @@ footer p {
 /* Media query for 4k monitors size >= 2560 px width */
 @media screen and (min-width: 2560px) {
 
+    
+
     #title h1 {
         font-size: 3em;
     }
@@ -541,6 +609,11 @@ footer p {
         font-size: xx-large;
         width: 200px;
         height: 80px;
+    }
+    #start-button {
+        width: 300px;
+        height: 60px;
+        padding: 10px;
     }
 
     #questions {
@@ -585,6 +658,7 @@ footer p {
         padding: 10px;
         height: 20vh;
         flex: 1 0 auto;
+        flex-wrap: wrap;
 
     }
 
@@ -605,10 +679,10 @@ footer p {
     #radar-plot-outer {
         align-self: flex-start;
         flex-grow: 4;
-        width: 500px;
+        width: 900px;
         height: 800px;
-
     }
+
 
     #radar-plot {
         padding: 5px;
@@ -616,5 +690,37 @@ footer p {
         width: 800px;
         height: 800px;
         font-size: xx-large;
+    
     }
+        
+    #button-results {
+        order:1;
+        align-self: flex-end;
+        width: 100vw;
+        height: 250px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #button-results #restart,  #button-results #quit{
+        width: 300px;
+        height: 70px;
+        flex-basis: auto;
+        padding: 10px;
+    }
+
+    #spacing-result{
+       order: 2;
+       height: 20vh;
+    }
+
+    footer p {
+        font-size: xx-large;
+    }
+
+
+    .fa-brands {
+        font-size: 5em;
+    }
+
 }
