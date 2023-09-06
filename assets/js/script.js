@@ -1,7 +1,3 @@
-/* eslint-disable */
-/* eslint-env es6 */
-
-
 // Imports list of questions for questions.js file
 import { questions } from './questions.js';
 
