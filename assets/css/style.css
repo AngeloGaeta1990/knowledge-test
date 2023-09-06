@@ -545,7 +545,7 @@ footer small {
     #results-summary {
         font-size: large;
         padding: 5px;
-        margin: 10px;
+        margin: 0 auto;
         width: 80vw;
     }
 
@@ -602,6 +602,8 @@ footer small {
 
     #intro p {
         font-size: xx-large;
+        margin-top: 10px;
+        width: 40vw;
 
     }
 
@@ -667,6 +669,7 @@ footer small {
         width: 50vw;
         align-self: flex-start;
         flex-shrink: 2;
+        margin-left: 40px;
 
     }
 
@@ -694,33 +697,44 @@ footer small {
     }
         
     #button-results {
-        order:1;
+        order:2;
         align-self: flex-end;
         width: 100vw;
         height: 250px;
         justify-content: center;
         align-items: center;
+        margin: 50px;
     }
 
-    #button-results #restart,  #button-results #quit{
-        width: 300px;
+    #button-results #restart,  #button-results #quit {
+        width: 250px;
         height: 70px;
         flex-basis: auto;
         padding: 10px;
+        font-size: x-large;
+        padding-top: 15px;
     }
 
     #spacing-result{
-       order: 2;
-       height: 20vh;
+        order: 3;
+        background-color: aqua;
+        height: 0px;
     }
 
+    footer{
+        height: 10vh;
+    }
+
+
     footer small {
-        font-size: xx-large;
+        font-size: z-large;
+        padding: 0px;
+        margin-bottom: 0px;
     }
 
 
     .fa-brands {
-        font-size: 5em;
+        font-size: 3em;
     }
 
 }
