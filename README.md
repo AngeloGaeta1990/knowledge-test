@@ -86,7 +86,7 @@ A brief introduction informs users about the project's purpose and how to start 
 
 ### Counters
 The question page displays a counter showing the number of questions answered and the number of the remaining. It also features a timer that resets with each new question. 
-Thus,  at the end of the quiz, the user can also visualize the category where he replied faster.
+Thus,  at the end of the quiz, the user can also visualize the category where he replied faster.  
 ![counters section of website](media/counters.png)
 
 ### Question
