@@ -138,7 +138,7 @@ body {
     min-height: 100vh;
 }
 
-#questions h3,
+#questions h2,
 #questions p {
     margin: 10px;
     padding: 5px;
@@ -335,7 +335,7 @@ footer ul {
     align-items: center;
 }
 
-footer p {
+footer small {
     font-size: small;
     color: white;
     padding: 10px;
@@ -493,7 +493,7 @@ footer p {
         height: 20vh;
     }
 
-    footer p {
+    footer small {
         font-size: medium;
         margin-bottom: 0px;
         padding-bottom: 0px;
@@ -714,7 +714,7 @@ footer p {
        height: 20vh;
     }
 
-    footer p {
+    footer small {
         font-size: xx-large;
     }
 

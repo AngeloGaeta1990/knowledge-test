@@ -29,19 +29,19 @@
     <main id="questions">
 
         <!-- counters section -->
-        <section id="counters">
+        <div id="counters">
             <p>question: <span id="question-counter"></span> of <span id="total-questions"></span></p>
             <p>time: <span id="timer"></span></p>
-        </section>
+        </div>
 
         <!-- Question section -->
-        <section id="question-container">
-            <h3 id="category"></h3>
+        <div id="question-container">
+            <h2 id="category">t</h2>
             <p id="question"></p>
-        </section>
+        </div>
 
         <!-- Answers section -->
-        <section id="answers">
+        <div id="answers">
             <label for="option1">
                 <input id="option1" type="radio" name="answer" value="option1">
                 <span id="answer1"></span>
@@ -58,13 +58,13 @@
                 <input id="option4" type="radio" name="answer" value="option4">
                 <span id="answer4"></span>
             </label>
-        </section>
+        </div>
 
         <!-- buttons sections -->
-        <section id="button-container">
+        <div id="button-container">
             <button type="submit" id="exit" class="button">Exit</button>
             <button data-type="submit" id="next" class="button">Next</button>
-        </section>
+        </div>
 
         <div id="hidden-exit">
             <p>Are you sure you want to leave the game?</p>
@@ -72,7 +72,7 @@
         </div>
 
         <div id="spacing-question"></div>
-        
+
     </main>
 
     <footer>
@@ -85,7 +85,7 @@
                         class="fa-brands fa-github"></i></a>
             </li>
         </ul>
-        <p>Copyright © Angelo Gaeta 2023</p>
+        <small>Copyright © Angelo Gaeta 2023</small>
     </footer>
 
     <!-- Font awesome kit -->

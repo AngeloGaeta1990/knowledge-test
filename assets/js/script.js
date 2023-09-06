@@ -316,5 +316,3 @@ function radarPlot(categories) {
         },
     })
 };
-
-
