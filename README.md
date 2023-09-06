@@ -91,7 +91,12 @@ Thus,  at the end of the quiz, the user can also visualize the category where he
 
 ### Question
 The question section presents the question category, the question itself, and a list of answer choices. Users can select the correct answer by clicking the radio button.
-The developer wrote the questions as broadly as possible, covering different topics within the same category.  
+The developer wrote the questions as broadly as possible, covering different topics within the same category.
+Furthermore, the quiz selects a question randomly from a pool, ensuring a new experience at each match.
+The above also simplifies a possible extension of the pool. 
+For example, if a developer adds more questions, the quiz will show only five random questions per category.
+Therefore, the quiz could display new questions to the user at each game
+  
 
 ![question section of the website](media/question_section.png)
 
@@ -114,6 +119,12 @@ The radar plot function uses the following library to draw the radar plot:
 
 ![radar plot](media/radarplot.png)
 
+### Restart and quit buttons
+The developer added a quit quiz button linking to the home page and a restart quiz button linking to the first question of the game.
+The restart game button keeps the player in a loop, making it easier to restart the game.  
+![restart and quit buttons](media/restart_quit_buttons.png)
+
+
 ### Footer
 The footer section links to the creator socials LinkedIn and Github and contains credits.
 ![footer](media/footer.png)
@@ -129,92 +140,106 @@ The footer section links to the creator socials LinkedIn and Github and contains
 
  - ### The hourglass
 
-    - **Bug:** A giff of an hourglass was added to the question page to make it more eyecathing. Nevertheless, the size and positioning of the hourglass giff was inconsistent.
+      - **Bug:**  The developer added the gif of an hourglass to the question page to make it more eye-catching. Nevertheless, the size and positioning of the hourglass giff was inconsistent.
     
     - **Cause:** Positioning of the hourglass was set in CSS using pixel values, leading to discrepancies in positioning on various screen widths.
 
-    - **Fix:** Improved positioning by using percentage values, but ultimately removed the hourglass as it did not syncronize with the timer and did not improve the page layout.
+    - **Fix:** Improved positioning by using percentage values, but ultimately removed the hourglass as it did not synchronize with the timer and did not improve the page layout.
 
  - ### Footer positioning
     - **Bug:** The footer did not stick to the bottom, resulting in a white margin at the bottom on screens where the content did not fill the viewport height.
 
-    - **Cause:** The background container was set to only occupy 80% of the viewport height, causing the footer positioning issue.
+    - **Cause:** The background container was set to occupy 80% of the viewport height, causing the footer positioning issue.
 
     - **Fix:** Adjusted the background container to occupy 100% of the viewport height, resolving the bug.
 
 - ### Questions not readable
-    - **Bug:** Especially on devices with a large screen width, the longest questions were not readable.
+       - **Bug:** The questions having the lengthiest text were not fully readable on large screens.
 
-    - **Cause:** To improve readability on larger screens, the font size was increased too much, causing questions to have a width larger than their div container. Moreover, they were overlapping with the answer div container.
+    - **Cause:** To improve readability on larger screens, the developer increased the font size too much, causing questions to have a width greater than their div container. Moreover, the questions overlapped with the answer div container.
 
-    - **Fix:** On devices with a large screen width, the question font size is still increased compared to devices with a lower width, but the font size has been reduced compared to the previous version. The size of the questions and answers div has been adjusted on larger devices, and on the question div, an overflow-auto declaration has been set. In this way, if the question text is too long on any device width, the user can scroll to read it.
+    - **Fix:** On devices with a large screen width, the question font size is still increased compared to devices with a lower width, but the font size has been reduced compared to the previous version. The developer reduced the size of the questions and answers div on wider screens. 
+    Moreover, he set an overflow-auto declaration on question div. Therefore, if the question text is too long on any device width, the user can scroll to read it.
 
 - ### Question counter showing 31
-   - **Bug:**  After replying to the last question, before moving to the result page, the question counter was showing 31 questions answered out of 30.
+   - **Bug:**  After replying to the last question, before moving to the result page, the question counter displayed 31 questions answered out of 30.
 
-   - **Cause:** The function responsible for the next question was set to be activated if the question counter was less than or equal to the total question counter. Therefore, the counter was updated even if the total number of questions displayed was equal to 30.
+   - **Cause:** The function responsible for the next question was set to be activated if the question counter was less than or equal to the total question counter. Therefore, the counter was updated even if the total number of questions displayed was 30.
 
    * **Fix:** The function responsible for the next question now updates the counter only if the total number of questions displayed is lower than the value set to be the total number of questions.
 
 
 - ### Radarplot not updating
-  - **Bug:** The radar plot was always showing a value of 0 for all categories, although the spans reporting the time and score were updated successfully.
+  - **Bug:** The radar plot was showing a value of 0 for all categories, although the spans reporting the time and score were updated successfully.
 
-  - **Cause:**  The variable `categories`, including the time and score for each category, when moved to the result page, gets the name of `storedCategory`, and the `categories` variable becomes undefined. The variable used as input for the radar plot function was set as `categories` rather than `storedCategories`.
+  - **Cause:**  The variable `categories`, including the time and score for each category, when moved to the result page, gets the name of `storedCategory`, and the `categories` variable resets. The input variable for the radar plot function was `categories` rather than `storedCategories`.
 
   - **Fix:** Using `storedCategories` as input for the radar plot function solved the bug.
 
-
 - ### Categories score being always 0
-   - **Bug:**  The `categories` scores and time were always 0, although the user was providing correct answers and taking time before answering.
+    - **Bug:**  The `categories` scores and time were always 0, although the user provided correct answers and took time before answering.
 
-   - **Cause:** After moving to a new HTML page, all variables are reset. This was causing the `categories` variable to be reset after the result page was loaded.
+   - **Cause:** All variables reset after moving to a new HTML page. Therefore,  the `categories` variable also resets after the result page loads.
 
-   - **Fix:** Creating a variable called `storedCategories` that is passed to the result page solved the bug.
+   - **Fix:** Creating a variable called `storedCategories`, which gets transferred to the result page, solved the bug.
 
 - ### Local Variables
-  - **Bug:** The time counter was showing as "nan," although all questions were displayed, time and score were counted for only one category, and the time reported was incorrect.
+- **Bug:** The time counter was showing as "nan," although all questions were displayed. The table reported a score value >0 only for one category. Furthermore, the time and score were both incorrect.
 
-  - **Cause:** In order to improve code readability, the developer tried to set the timer and question variables as local variables. This caused the question variable to be updated only in the local function. When a question was generated, only the category of the first question chosen was passed to the next functions. The same was happening for the time counter; being local, it was not updated every second as expected.
+  - **Cause:** To improve code readability, the developer tried to set the timer and question variables as local variables. Thus, the `question` variable did not update at a higher scope. When the function `generateQuestion` generated a question in the load document event for the questions page, the `nextQuestion` function took in input a single value without updating. The same was happening for the time counter. It was a local variable and therefore was not updating every second as expected in the higher scope.
   
-  - **Fix:** Setting the timer and question generated as global variables fixed the issue.
+  - **Fix:** Setting the timer and the question variable as global fixed the issue.
 
 - ### For loop
-  - **Bug:**  Questions that were already displayed appeared again, and the question counter showed values multiples of the total question length.
+ - **Bug:**  The quiz could show the same question to the user several times, and the question counter showed values multiples of the total question length.
 
-  - **Cause:** The problem arose from using a for loop that repeated itself regardless of a click event. Consequently, all the functions preceding the `nextQuestion` function executed, even when the user did not click the "Next" button. This behavior was unintentional on the developer's part.
+  - **Cause:** The problem arose from using a for loop that repeated itself regardless of a click event. Consequently, all the functions preceding the `nextQuestion` were executed, even when the user did not click the "Next" button. This behaviour was unintentional on the developer's part.
 
   - **Fix:** To rectify this issue, the developer moved the functions that were supposed to execute in the for loop to the click and keyboard event listeners. These event listeners handle the selection of a new question and the updating of the timer. This change ensures that the functions execute only when necessary, improving the user experience.
 ---
 ## Future developments
- - Create an addinional plot showing the score stats, likely a bar plot.
+- Create an additional plot showing the score stats, likely a bar plot.
 
  - Add questions including pictures rather than only text.
 
- - Return a message describing the user profile based on the socre: e.g. Your are a dragon in geography score {max score} and your knowledge in history and sport are not bad either {>half-max score}, but you are a donkey in literature {score 0}
-
-
+ - Return a message describing the user profile based on the score: e.g. You are a dragon in geography score {max score}. Your knowledge in history and sport is not negligible either {>half-max score}, but you are a donkey in literature {score 0}
  ---
 
 ## Validators
 
 - HTML
-  - No error was returned when submitted to the W3C validator.
+  - The W3C validator returned no error for .html files.
 - CSS
-  - No error was returned when submitted to the Jigsaw validator.
+  - The Jigsaw validator returned no error for .css files.
+- JavaScript
+  - The JSHint returned no error for .js files (Assume settings= Browser, jQuery,Development, New JavaScript features)
 - Accessibility 
-![lighthouse score](media/lighthouse.png)
-Lighthouse returns a score of 93 on question page.
+  - Lighthouse score for mobile devices
+    - index.html  
+     ![lighthouse score for index.html file on mobile devices](media/lighthouse_mobile_index.png)
+    - questions.html  
+     ![lighthouse score for questions.html file on mobile devices](media/lighthouse_mobile_question.png)
+    - results.html  
+     ![lighthouse score for results.html file on mobile devices](media/lighthouse_mobile_results.png)
+  - Lighthouse score for laptop devices
+    - index.html  
+  ![lighthouse score for index.html file on laptop devices](media/lighthouse_laptop_index.png)
+    - questions.html  
+    ![lighthouse score for question.html file on laptop devices](media/lighthouse_laptop_question.png)
+    - results.html  
+    ![lighthouse score for results.html file on laptop devices](media/lighthouse_laptop_results.png)
+
 ---
-### Deployment {#deployment}
-The website was deployed to GitHub pages.The website has been deployes as follow:
+### Deployment
+The website deploys to GitHub pages. 
+To deploy the website, do as follows:
 1. Select Setting on the repository menu
 2. Select Pages in the menu on the right
 3. Select Deploy from a branch
-4. Select main branch then click on save [Live link to Wisdom trial](https://angelogaeta1990.github.io/knowledge-test/)
+4. Select the main branch, then click on save [Live link to Wisdom trial](https://angelogaeta1990.github.io/knowledge-test/)
 
 #### How to add questions and categories
-  1. In file script.js edit the questions objects:
+  1. In file script.js, edit the questions objects:
   ```javascript
       id: 28,
       category: "Science",
@@ -227,11 +252,13 @@ The website was deployed to GitHub pages.The website has been deployes as follow
       correctAnswerId: "option1",
   ```
 
-2. The id represents the question number,questions are listed from the first to the last, therefore their id varies from 1 to 30, if the user wants to add a question the new question id is 31, otherwise keep the question id but change the other attributes.
+2. The id represents the question number. 
+Questions are listed from the first to the last, and their ID varies from 1 to 30. 
+If the user wants to add a question, the new question ID must be 31. Otherwise, keep the question ID but change the other attributes of the object.
 
-3. category respresent the question category, new category can be added by replacing "Science" with "Biology" for example.
+3. The category attribute represents the subject of the question. For example, the developer can change it by replacing the string "Science" with  "Biology".
 
-4. Edit the question attribute with the new question and add the answers in the related field. Fill also the corretAnswer with the corret option and the correctAnswerid: has to be in the format "option{answer number}", therefore the accepted values are: "option1", "option2", "option3", "option4". see point 1 to check the object structure.
+4. Edit the question attribute with the new question and add the answers in the related field. Fill also the `corretAnswer` with the correct option. The `correctAnswerid`: has to be in the format "option{answer number}". Therefore, the accepted values are: "option1", "option2", "option3", and "option4". See point 1 to check the object structure.
 
 5. Adjust the category variable accordingly in script.js
 ```javascript
@@ -242,11 +269,13 @@ let categories = [
         score: 0,
     },
     ....
+]
   ```
-add the name of the category or edit an existing one, if you add a new category set its time and score to 0.
+The developer can replace a category by changing the `name` attribute.
+He can introduce a new category by adding a new object to the `categories` array and filling the attributes, setting `time` and `score` as 0
 
-6.  In scripts.js edit the following part of code, by setting max as the max score you can get in any category.
-It sets the maximum value of the catagories score dispalyed in the radarplot:
+6.  In scripts.js, edit the following part of the code by setting max as the max score you can get in any category.
+It sets the maximum value displayed in the radar plot:
 ```javascript
 options: {
             scale: {
@@ -257,18 +286,23 @@ options: {
                     //Minimum Difference between values
                     stepSize: 1,
                 },
+                ...
+            }
+         ...   
+}
 ```
 
 7. Adjust the table element in results.html according to the new categories chosen.
 
 ## Testing 
- - The project has been tested in the following browser: Google chrome, Edge, and Firefox, no issue has been observed.
+ - The developer tested project in the following browser: Google chrome, Edge, and Firefox, no issue has been observed.
 
- - The project as been developed using a mobile first approach, and breakpoints have been detected by gradually increasing the the screen width in devtools and adding a media query where necessary.
+ - The developer applied the mobile-first approach for this project and detected breakpoints by gradually increasing the screen width in Chrome dev tools and adding media queries where necessary.
 
- - All buttons have been tested, and their functions meets the expected behaviour.
+ - The developer tested all buttons, and their functions met the expected behaviour.
 
- - No issue has been reported for questions and answers, they show without issue regardless of the screen size tested.
+ - The developer observed no graphical issue for questions and answers.
+ They show without problems, regardless of the screen size tested.
 ---
 
 ## Credits 

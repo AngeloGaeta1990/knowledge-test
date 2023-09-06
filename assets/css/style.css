@@ -10,7 +10,7 @@
 
 /* General */
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Lumanosimo', sans-serif;
@@ -86,7 +86,7 @@ body {
 }
 
 #hero-image-outer {
-    background: url('../images/knowledge_hero_image.png') no-repeat center center/cover;
+    background: url('../images/knowledge_hero_image.webp') no-repeat center center/cover;
     width: 80vw;
     height: 50vh;
     margin: 20px;
@@ -351,6 +351,10 @@ footer small {
         width: 50px;
         height: 30px;
     }
+
+    .fa-brands {
+        font-size: 1.5em;
+    }
 }
 
 /* Media query for mobile of large size >= 592px width */
@@ -403,6 +407,10 @@ footer small {
         width: 60vw;
         height: 60vh;
         align-self: center;
+    }
+
+    .fa-brands {
+        font-size: 2em;
     }
 }
 
@@ -485,12 +493,7 @@ footer small {
         margin-top: 5px;
         margin-left: 30px;
     }
-
-    .fa-brands {
-        font-size: x-large;
-    }
-}
-
+    
 /* Media query for Laptop of medium size >= 1044 px width */
 @media screen and (min-width: 1044px) {
 
@@ -597,7 +600,7 @@ footer small {
     }
 
     #questions {
-        height: 90vh;
+        height: 100vh;
     }
 
     #counters {
@@ -605,10 +608,12 @@ footer small {
     }
 
     #category {
+        margin: 30px;
         font-size: 3em;
     }
 
     #question {
+        margin: 30px;
         font-size: 2.5em;
     }
 
@@ -698,16 +703,22 @@ footer small {
     }
 
     footer{
-        height: 10vh;
+        margin: 0;
+        height: 15vh;
+    }
+
+    #questions-footer {
+        position: fixed;
+        bottom: 0px
     }
 
     footer small {
-        font-size: z-large;
+        font-size: xx-large;
         padding: 0px;
         margin-bottom: 0px;
     }
 
     .fa-brands {
-        font-size: 3em;
+        font-size: 5em;
     }
 }
