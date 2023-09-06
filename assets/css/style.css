@@ -293,7 +293,8 @@ body {
     flex-wrap: wrap;
 }
 
-#restart, #quit {
+#restart,
+#quit {
     width: 100px;
     font-size: small;
 }
@@ -377,7 +378,7 @@ footer small {
 
     }
 
-    #hero-image-outer{
+    #hero-image-outer {
         height: 70vh;
     }
 
@@ -395,7 +396,7 @@ footer small {
         margin-top: 20px;
     }
 
-    #button-container{
+    #button-container {
         margin: 20px;
     }
 
@@ -493,7 +494,8 @@ footer small {
         margin-top: 5px;
         margin-left: 30px;
     }
-    
+}
+
 /* Media query for Laptop of medium size >= 1044 px width */
 @media screen and (min-width: 1044px) {
 
@@ -593,6 +595,7 @@ footer small {
         width: 200px;
         height: 80px;
     }
+
     #start-button {
         width: 300px;
         height: 60px;
@@ -674,11 +677,11 @@ footer small {
         width: 800px;
         height: 800px;
         font-size: xx-large;
-    
+
     }
-        
+
     #button-results {
-        order:2;
+        order: 2;
         align-self: flex-end;
         width: 100vw;
         height: 250px;
@@ -687,7 +690,8 @@ footer small {
         margin: 50px;
     }
 
-    #button-results #restart,  #button-results #quit {
+    #button-results #restart,
+    #button-results #quit {
         width: 250px;
         height: 70px;
         flex-basis: auto;
@@ -696,13 +700,13 @@ footer small {
         padding-top: 15px;
     }
 
-    #spacing-result{
+    #spacing-result {
         order: 3;
         background-color: aqua;
         height: 0px;
     }
 
-    footer{
+    footer {
         margin: 0;
         height: 15vh;
     }

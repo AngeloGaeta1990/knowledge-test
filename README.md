@@ -92,10 +92,10 @@ Thus,  at the end of the quiz, the user can also visualize the category where he
 ### Question
 The question section presents the question category, the question itself, and a list of answer choices. Users can select the correct answer by clicking the radio button.
 The developer wrote the questions as broadly as possible, covering different topics within the same category.
-Furthermore, the quiz selects a question randomly from a pool, ensuring a new experience at each match.
-The above also simplifies a possible extension of the pool. 
+Furthermore, the quiz selects a question randomly from a pool, ensuring a different questions order at each match.
+The above also simplifies a possible extension of the questions pool. 
 For example, if a developer adds more questions, the quiz will show only five random questions per category.
-Therefore, the quiz could display new questions to the user at each game
+Therefore, the quiz could display new questions to the user at each game.
   
 
 ![question section of the website](media/question_section.png)
@@ -120,7 +120,7 @@ The radar plot function uses the following library to draw the radar plot:
 ![radar plot](media/radarplot.png)
 
 ### Restart and quit buttons
-The developer added a quit quiz button linking to the home page and a restart quiz button linking to the first question of the game.
+The developer added a "quit quiz" button linking to the home page and a "restart quiz" button linking to the first question of the game.
 The restart game button keeps the player in a loop, making it easier to restart the game.  
 ![restart and quit buttons](media/restart_quit_buttons.png)
 
@@ -140,7 +140,7 @@ The footer section links to the creator socials LinkedIn and Github and contains
 
  - ### The hourglass
 
-      - **Bug:**  The developer added the gif of an hourglass to the question page to make it more eye-catching. Nevertheless, the size and positioning of the hourglass giff was inconsistent.
+      - **Bug:**  The developer added the gif of an hourglass to the question page to make it more eye-catching. Nevertheless, the size and positioning of the hourglass gif was inconsistent.
     
     - **Cause:** Positioning of the hourglass was set in CSS using pixel values, leading to discrepancies in positioning on various screen widths.
 
@@ -154,7 +154,7 @@ The footer section links to the creator socials LinkedIn and Github and contains
     - **Fix:** Adjusted the background container to occupy 100% of the viewport height, resolving the bug.
 
 - ### Questions not readable
-       - **Bug:** The questions having the lengthiest text were not fully readable on large screens.
+    - **Bug:** The questions having the lengthiest text were not fully readable on large screens.
 
     - **Cause:** To improve readability on larger screens, the developer increased the font size too much, causing questions to have a width greater than their div container. Moreover, the questions overlapped with the answer div container.
 
@@ -167,7 +167,6 @@ The footer section links to the creator socials LinkedIn and Github and contains
    - **Cause:** The function responsible for the next question was set to be activated if the question counter was less than or equal to the total question counter. Therefore, the counter was updated even if the total number of questions displayed was 30.
 
    * **Fix:** The function responsible for the next question now updates the counter only if the total number of questions displayed is lower than the value set to be the total number of questions.
-
 
 - ### Radarplot not updating
   - **Bug:** The radar plot was showing a value of 0 for all categories, although the spans reporting the time and score were updated successfully.
@@ -184,14 +183,14 @@ The footer section links to the creator socials LinkedIn and Github and contains
    - **Fix:** Creating a variable called `storedCategories`, which gets transferred to the result page, solved the bug.
 
 - ### Local Variables
-- **Bug:** The time counter was showing as "nan," although all questions were displayed. The table reported a score value >0 only for one category. Furthermore, the time and score were both incorrect.
+  - **Bug:** The time counter was showing as "nan",although all questions were displayed. The table reported a score value >0 only for one category. Furthermore, the time and score were both incorrect.
 
-  - **Cause:** To improve code readability, the developer tried to set the timer and question variables as local variables. Thus, the `question` variable did not update at a higher scope. When the function `generateQuestion` generated a question in the load document event for the questions page, the `nextQuestion` function took in input a single value without updating. The same was happening for the time counter. It was a local variable and therefore was not updating every second as expected in the higher scope.
+  - **Cause:** To improve code readability, the developer tried to set the timer and question variables as local variables. Thus, the `question` variable did not update at a higher scope. When the function `generateQuestion` generated a question in the load document event for the questions page, the `nextQuestion` function took as input a single value without updating. The same  happened for the time counter. The time counter was a local variable and therefore was not updating every second in the higher scope as expected.
   
-  - **Fix:** Setting the timer and the question variable as global fixed the issue.
+  - **Fix:** Setting the timer and the question variable as global, fixed the issue.
 
 - ### For loop
- - **Bug:**  The quiz could show the same question to the user several times, and the question counter showed values multiples of the total question length.
+   - **Bug:**  The quiz could show the same question to the user several times, and the question counter showed values multiples of the total question length.
 
   - **Cause:** The problem arose from using a for loop that repeated itself regardless of a click event. Consequently, all the functions preceding the `nextQuestion` were executed, even when the user did not click the "Next" button. This behaviour was unintentional on the developer's part.
 
@@ -202,7 +201,7 @@ The footer section links to the creator socials LinkedIn and Github and contains
 
  - Add questions including pictures rather than only text.
 
- - Return a message describing the user profile based on the score: e.g. You are a dragon in geography score {max score}. Your knowledge in history and sport is not negligible either {>half-max score}, but you are a donkey in literature {score 0}
+ - Return a message describing the user profile based on the score: e.g. You are a dragon in Geography score {max score}. Your knowledge in History and Sport is not negligible either {>half-max score}, but you are a donkey in Literature {score 0}.
  ---
 
 ## Validators
@@ -236,7 +235,8 @@ To deploy the website, do as follows:
 1. Select Setting on the repository menu
 2. Select Pages in the menu on the right
 3. Select Deploy from a branch
-4. Select the main branch, then click on save [Live link to Wisdom trial](https://angelogaeta1990.github.io/knowledge-test/)
+4. Select the main branch, then click on save 
+5. [Live link to Wisdom trial](https://angelogaeta1990.github.io/knowledge-test/)
 
 #### How to add questions and categories
   1. In file script.js, edit the questions objects:
@@ -295,7 +295,7 @@ options: {
 7. Adjust the table element in results.html according to the new categories chosen.
 
 ## Testing 
- - The developer tested project in the following browser: Google chrome, Edge, and Firefox, no issue has been observed.
+ - The developer tested project in the following browser: Google Chrome, Edge, and Firefox, no issue has been observed.
 
  - The developer applied the mobile-first approach for this project and detected breakpoints by gradually increasing the screen width in Chrome dev tools and adding media queries where necessary.
 
